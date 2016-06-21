@@ -9,13 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jerry-category-client</artifactId>
+    <artifactId>jerry-user</artifactId>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>io.luan</groupId>
-            <artifactId>jerry-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>jerry-user-client</module>
+        <module>jerry-user-provider</module>
+    </modules>
 </project>

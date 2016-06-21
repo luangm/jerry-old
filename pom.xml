@@ -12,16 +12,11 @@
 
     <modules>
         <module>jerry-common</module>
-        <module>jerry-user-client</module>
-        <module>jerry-user-provider</module>
-        <module>jerry-category-client</module>
-        <module>jerry-category-provider</module>
-        <module>jerry-item-client</module>
-        <module>jerry-item-provider</module>
-        <module>jerry-shop-client</module>
-        <module>jerry-shop-provider</module>
-        <module>jerry-order-client</module>
-        <module>jerry-order-provider</module>
+        <module>jerry-category</module>
+        <module>jerry-item</module>
+        <module>jerry-user</module>
+        <module>jerry-shop</module>
+        <module>jerry-order</module>
     </modules>
 
     <properties>
