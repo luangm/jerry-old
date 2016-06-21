@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="io.qianmo.category.entity">
+	<class name="ProductCategory" table="product_categories">
+
+		<id name="id" column="category_id" />
+
+		<property name="parentId">
+			<column name="parent_id" not-null="true" index="IDX_PARENT_ID" unique-key="UK_PARENT_NAME" />
+		</property>
+
+		<property name="name">
+			<column name="name" index="IDX_NAME" unique-key="UK_PARENT_NAME"
+				not-null="true" />
+		</property>
+
+		<property name="imageUrl">
+			<column name="image_url" />
+		</property>
+
+		<property name="level">
+			<column name="level" index="IDX_LEVEL" not-null="true" />
+		</property>
+
+		<property name="min">
+			<column name="min" index="IDX_MIN" not-null="true" />
+		</property>
+
+		<property name="max">
+			<column name="max" index="IDX_MAX" not-null="true" />
+		</property>
+		
+		<property name="isDeleted">
+			<column name="is_deleted" not-null="true" sql-type="tinyint(1)" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

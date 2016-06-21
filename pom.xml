@@ -17,6 +17,7 @@
         <module>jerry-user</module>
         <module>jerry-shop</module>
         <module>jerry-order</module>
+        <module>jerry-test</module>
     </modules>
 
     <properties>

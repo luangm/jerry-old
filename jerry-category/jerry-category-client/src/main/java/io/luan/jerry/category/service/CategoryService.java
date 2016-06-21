@@ -6,5 +6,6 @@ import io.luan.jerry.category.sdo.CategorySDO;
  * Service interfaces for Category
  */
 public interface CategoryService {
-    CategorySDO getCategory(Long categoryId);
+
+    CategorySDO getCategory(int categoryId);
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="io.qianmo.category.entity">
+
+	<class name="ShopCategory" table="shop_categories">
+		<id name="id" column="category_id" />
+
+		<property name="name">
+			<column name="name" not-null="true" />
+		</property>
+
+		<property name="displayName">
+			<column name="display_name" />
+		</property>
+
+		<property name="isPersonal">
+			<column name="is_personal" sql-type="tinyint(1)" not-null="true" />
+		</property>
+
+		<property name="imageUrl">
+			<column name="image_url" />
+		</property>
+		
+		<property name="isDeleted">
+			<column name="is_deleted" not-null="true" sql-type="tinyint(1)" />
+		</property>
+	</class>
+
+</hibernate-mapping>
