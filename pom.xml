@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -11,9 +11,17 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>jerry-user-client</module>
         <module>jerry-common</module>
+        <module>jerry-user-client</module>
         <module>jerry-user-provider</module>
+        <module>jerry-category-client</module>
+        <module>jerry-category-provider</module>
+        <module>jerry-item-client</module>
+        <module>jerry-item-provider</module>
+        <module>jerry-shop-client</module>
+        <module>jerry-shop-provider</module>
+        <module>jerry-order-client</module>
+        <module>jerry-order-provider</module>
     </modules>
 
     <properties>
@@ -207,7 +215,7 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId> org.apache.maven.plugins</groupId>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${assembly_version}</version>
                 </plugin>
