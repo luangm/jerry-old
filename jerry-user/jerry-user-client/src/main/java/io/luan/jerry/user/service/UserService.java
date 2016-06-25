@@ -1,13 +1,13 @@
 package io.luan.jerry.user.service;
 
-import io.luan.jerry.user.sdo.UserSDO;
+import io.luan.jerry.user.sdo.User;
 
 /**
  * User Service interface
  */
 public interface UserService {
 
-    UserSDO getUser(long userId);
+    User getUser(long userId);
 
-    UserSDO getUserByUsername(String username);
+    User getUserByUsername(String username);
 }

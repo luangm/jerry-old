@@ -1,84 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
-	<dubbo:application name="test_consumer" />
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="test_consumer"/>
 
-	<!-- 使用zookeeper注册中心暴露服务地址 -->
-	<dubbo:registry address="zookeeper://192.168.1.110:2181"
-		client="curator" />
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry address="zookeeper://192.168.1.110:2181"
+                    client="curator"/>
 
-	<!-- 生成远程服务代理，可以像使用本地bean一样使用xxxService -->
+    <!-- 生成远程服务代理，可以像使用本地bean一样使用xxxService -->
 
-	<!-- Category -->
-	<dubbo:reference id="categoryService"
-		interface="io.luan.jerry.category.service.CategoryService" check="false" />
-	<!--<dubbo:reference id="productCategoryService"-->
-		<!--interface="io.qianmo.category.service.ProductCategoryService" check="false" />-->
-	<!--<dubbo:reference id="attributeService"-->
-		<!--interface="io.qianmo.category.service.AttributeService" check="false" />-->
-	<!--<dubbo:reference id="attributeOptionService"-->
-		<!--interface="io.qianmo.category.service.AttributeOptionService" check="false" />-->
+    <!-- Category -->
+    <dubbo:reference id="categoryService"
+                     interface="io.luan.jerry.category.service.CategoryService" check="false"/>
 
-	<!--&lt;!&ndash; User &ndash;&gt;-->
-	<!--<dubbo:reference id="userService"-->
-		<!--interface="io.qianmo.user.service.UserService" check="false" />-->
+    <dubbo:reference id="userService"
+                     interface="io.luan.jerry.user.service.UserService" check="false"/>
 
-	<!--&lt;!&ndash; Shop &ndash;&gt;-->
-	<!--<dubbo:reference id="shopService"-->
-		<!--interface="io.qianmo.shop.service.ShopService" check="false" />-->
-	<!--<dubbo:reference id="shelfService"-->
-		<!--interface="io.qianmo.shop.service.ShelfService" check="false" />-->
+    <dubbo:reference id="shopService"
+                     interface="io.luan.jerry.shop.service.ShopService" check="false"/>
 
-<!--&lt;!&ndash; CRM &ndash;&gt;-->
-	<!--<dubbo:reference id="membershipService"-->
-		<!--interface="io.qianmo.crm.service.MembershipService" check="false" />-->
-	<!---->
-	<!--&lt;!&ndash; Product &ndash;&gt;-->
-	<!--<dubbo:reference id="productService"-->
-		<!--interface="io.qianmo.product.service.ProductService" -->
-		<!--check="false" />-->
-	<!--<dubbo:reference id="specificationService" -->
-		<!--interface="io.qianmo.product.service.SpecificationService" check="false" />-->
-	<!--<dubbo:reference id="specificationOptionService"-->
-		 <!--interface="io.qianmo.product.service.SpecificationOptionService"-->
-		<!--check="false" />-->
+    <!--<dubbo:reference id="productCategoryService"-->
+    <!--interface="io.qianmo.category.service.ProductCategoryService" check="false" />-->
+    <!--<dubbo:reference id="attributeService"-->
+    <!--interface="io.qianmo.category.service.AttributeService" check="false" />-->
+    <!--<dubbo:reference id="attributeOptionService"-->
+    <!--interface="io.qianmo.category.service.AttributeOptionService" check="false" />-->
 
-	<!--&lt;!&ndash; Sku &ndash;&gt;-->
-	<!--<dubbo:reference id="skuService" interface="io.qianmo.sku.service.SkuService"-->
-		<!--check="false" />-->
+    <!--&lt;!&ndash; User &ndash;&gt;-->
+    <!--<dubbo:reference id="userService"-->
+    <!--interface="io.qianmo.user.service.UserService" check="false" />-->
 
-	<!--&lt;!&ndash; Order &ndash;&gt;-->
-	<!--<dubbo:reference id="orderService"-->
-		<!--interface="io.qianmo.order.service.OrderService" check="false" />-->
+    <!--&lt;!&ndash; Shop &ndash;&gt;-->
+    <!--<dubbo:reference id="shopService"-->
+    <!--interface="io.qianmo.shop.service.ShopService" check="false" />-->
+    <!--<dubbo:reference id="shelfService"-->
+    <!--interface="io.qianmo.shop.service.ShelfService" check="false" />-->
 
-	<!--&lt;!&ndash; Promo &ndash;&gt;-->
-	<!--<dubbo:reference id="promoService"-->
-		<!--interface="io.qianmo.promo.service.PromoService" check="false" />-->
-	<!--<dubbo:reference id="couponService"-->
-		<!--interface="io.qianmo.promo.service.CouponService" check="false" />-->
-	<!--<dubbo:reference id="discountService"-->
-		<!--interface="io.qianmo.promo.service.DiscountService" check="false" />-->
-	<!--<dubbo:reference id="couponInfoService"-->
-		<!--interface="io.qianmo.promo.service.CouponInfoService" check="false" />-->
+    <!--&lt;!&ndash; CRM &ndash;&gt;-->
+    <!--<dubbo:reference id="membershipService"-->
+    <!--interface="io.qianmo.crm.service.MembershipService" check="false" />-->
+    <!---->
+    <!--&lt;!&ndash; Product &ndash;&gt;-->
+    <!--<dubbo:reference id="productService"-->
+    <!--interface="io.qianmo.product.service.ProductService" -->
+    <!--check="false" />-->
+    <!--<dubbo:reference id="specificationService" -->
+    <!--interface="io.qianmo.product.service.SpecificationService" check="false" />-->
+    <!--<dubbo:reference id="specificationOptionService"-->
+    <!--interface="io.qianmo.product.service.SpecificationOptionService"-->
+    <!--check="false" />-->
 
-	<!--&lt;!&ndash; Chat &ndash;&gt;-->
-	<!--<dubbo:reference id="convService"-->
-		<!--interface="io.qianmo.chat.service.ConversationService" check="false" />-->
+    <!--&lt;!&ndash; Sku &ndash;&gt;-->
+    <!--<dubbo:reference id="skuService" interface="io.qianmo.sku.service.SkuService"-->
+    <!--check="false" />-->
 
-	<!--&lt;!&ndash; Post &ndash;&gt;-->
-	<!--<dubbo:reference id="postService"-->
-		<!--interface="io.qianmo.post.service.PostService" check="false" />-->
-	<!--<dubbo:reference id="commentService"-->
-		<!--interface="io.qianmo.post.service.CommentService" check="false" />-->
+    <!--&lt;!&ndash; Order &ndash;&gt;-->
+    <!--<dubbo:reference id="orderService"-->
+    <!--interface="io.qianmo.order.service.OrderService" check="false" />-->
 
-	<!--&lt;!&ndash; Review &ndash;&gt;-->
-	<!--<dubbo:reference id="reviewService"-->
-		<!--interface="io.qianmo.review.service.ReviewService" check="false" />-->
+    <!--&lt;!&ndash; Promo &ndash;&gt;-->
+    <!--<dubbo:reference id="promoService"-->
+    <!--interface="io.qianmo.promo.service.PromoService" check="false" />-->
+    <!--<dubbo:reference id="couponService"-->
+    <!--interface="io.qianmo.promo.service.CouponService" check="false" />-->
+    <!--<dubbo:reference id="discountService"-->
+    <!--interface="io.qianmo.promo.service.DiscountService" check="false" />-->
+    <!--<dubbo:reference id="couponInfoService"-->
+    <!--interface="io.qianmo.promo.service.CouponInfoService" check="false" />-->
+
+    <!--&lt;!&ndash; Chat &ndash;&gt;-->
+    <!--<dubbo:reference id="convService"-->
+    <!--interface="io.qianmo.chat.service.ConversationService" check="false" />-->
+
+    <!--&lt;!&ndash; Post &ndash;&gt;-->
+    <!--<dubbo:reference id="postService"-->
+    <!--interface="io.qianmo.post.service.PostService" check="false" />-->
+    <!--<dubbo:reference id="commentService"-->
+    <!--interface="io.qianmo.post.service.CommentService" check="false" />-->
+
+    <!--&lt;!&ndash; Review &ndash;&gt;-->
+    <!--<dubbo:reference id="reviewService"-->
+    <!--interface="io.qianmo.review.service.ReviewService" check="false" />-->
 
 </beans> 

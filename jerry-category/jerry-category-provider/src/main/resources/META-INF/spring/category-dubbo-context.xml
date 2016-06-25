@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-	<!-- 具体的实现bean -->
-	<bean id="categoryService" class="io.luan.jerry.category.service.impl.CategoryServiceImpl" />
-	<!--<bean id="attributeService" class="io.qianmo.category.service.impl.AttributeServiceImpl" />-->
-	<!--<bean id="shopCategoryService" class="io.qianmo.category.service.impl.ShopCategoryServiceImpl" />-->
+    <!-- 具体的实现bean -->
+    <bean id="categoryService" class="io.luan.jerry.category.service.impl.CategoryServiceImpl"/>
+    <!--<bean id="attributeService" class="io.qianmo.category.service.impl.AttributeServiceImpl" />-->
+    <!--<bean id="shopCategoryService" class="io.qianmo.category.service.impl.ShopCategoryServiceImpl" />-->
 
-	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service interface="io.luan.jerry.category.service.CategoryService"
-		ref="categoryService" />
-	<!--<dubbo:service interface="io.qianmo.category.service.AttributeService"-->
-		<!--ref="attributeService" />-->
-	<!--<dubbo:service interface="io.qianmo.category.service.ShopCategoryService"-->
-		<!--ref="shopCategoryService" />-->
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="io.luan.jerry.category.service.CategoryService"
+                   ref="categoryService"/>
+    <!--<dubbo:service interface="io.qianmo.category.service.AttributeService"-->
+    <!--ref="attributeService" />-->
+    <!--<dubbo:service interface="io.qianmo.category.service.ShopCategoryService"-->
+    <!--ref="shopCategoryService" />-->
 </beans> 

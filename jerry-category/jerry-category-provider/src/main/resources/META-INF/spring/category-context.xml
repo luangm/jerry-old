@@ -12,9 +12,9 @@
        http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
     <aop:aspectj-autoproxy/>
-    <context:component-scan base-package="io.luan.jerry.category"/>
+    <context:component-scan base-package="io.luan.jerry"/>
     <!-- scan for mappers and let them be autowired -->
-    <mybatis:scan base-package="io.luan.jerry.category.mapper"/>
+    <mybatis:scan base-package="io.luan.jerry"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
           destroy-method="close">
@@ -30,8 +30,8 @@
         <property name="configLocation" value="classpath:mybatis-config.xml" />
     </bean>
 
-    <!--<bean id="categoryMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
-        <!--<property name="mapperInterface" value="io.luan.jerry.category.mapper.CategoryMapper"/>-->
+    <!--<bean id="categoryMapper" class="org.mybatis.spring.dao.MapperFactoryBean">-->
+        <!--<property name="mapperInterface" value="io.luan.jerry.category.daotegoryMapper"/>-->
         <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
     <!--</bean>-->
 

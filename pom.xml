@@ -18,6 +18,7 @@
         <module>jerry-shop</module>
         <module>jerry-order</module>
         <module>jerry-test</module>
+        <module>jerry-logistics</module>
     </modules>
 
     <properties>

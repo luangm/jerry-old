@@ -1,11 +1,11 @@
 package io.luan.jerry.category.service;
 
-import io.luan.jerry.category.sdo.CategorySDO;
+import io.luan.jerry.category.sdo.Category;
 
 /**
  * Service interfaces for Category
  */
 public interface CategoryService {
 
-    CategorySDO getCategory(int categoryId);
+    Category getCategory(int categoryId);
 }
