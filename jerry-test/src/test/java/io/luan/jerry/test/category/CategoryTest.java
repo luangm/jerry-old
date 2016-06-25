@@ -31,7 +31,6 @@ public class CategoryTest {
 
     @Test
     public void testProductCategory() {
-        CategorySDO cat = catService.getCategory(1);
-        System.out.println(cat);
+       catService.getCategory(1);
     }
 }

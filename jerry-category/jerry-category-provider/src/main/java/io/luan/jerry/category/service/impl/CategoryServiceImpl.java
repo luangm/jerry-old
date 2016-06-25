@@ -23,8 +23,13 @@ public class CategoryServiceImpl implements CategoryService {
         sdo.setName("RootCategory");
         sdo.setChildren(new ArrayList<>());
 
-        CategoryDO catDO = categoryMapper.getCategory(categoryId);
-        System.out.println(catDO);
+        CategoryDO cat = categoryMapper.getCategory(categoryId);
+        System.out.println(cat);
+
+
+        // CategoryDO catDO = categoryMapper.getCategory(categoryId);
+        // System.out.println(catDO);
         return sdo;
     }
+
 }
