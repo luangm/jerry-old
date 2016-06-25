@@ -14,7 +14,7 @@
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
-			<directory>${project.build.directory}/classes/META-INF/assembly/bin
+			<directory>${project.build.directory}/classes/assembly/bin
 			</directory>
 			<outputDirectory>bin</outputDirectory>
 			<fileMode>0755</fileMode>
