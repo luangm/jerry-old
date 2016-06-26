@@ -14,7 +14,7 @@
     <aop:aspectj-autoproxy/>
     <context:component-scan base-package="io.luan.jerry"/>
     <!-- scan for mappers and let them be autowired -->
-    <mybatis:scan base-package="io.luan.jerry"/>
+    <mybatis:scan base-package="io.luan.jerry.shop.dao"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
           destroy-method="close">

@@ -25,6 +25,9 @@
     <dubbo:reference id="shopService"
                      interface="io.luan.jerry.shop.service.ShopService" check="false"/>
 
+    <dubbo:reference id="itemService"
+                     interface="io.luan.jerry.item.service.ItemService" check="false"/>
+
     <!--<dubbo:reference id="productCategoryService"-->
     <!--interface="io.qianmo.category.service.ProductCategoryService" check="false" />-->
     <!--<dubbo:reference id="attributeService"-->

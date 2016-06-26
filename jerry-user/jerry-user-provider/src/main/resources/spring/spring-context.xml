@@ -2,19 +2,18 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+
        http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
     <aop:aspectj-autoproxy/>
     <context:component-scan base-package="io.luan.jerry"/>
     <!-- scan for mappers and let them be autowired -->
-    <mybatis:scan base-package="io.luan.jerry"/>
+    <mybatis:scan base-package="io.luan.jerry.user.dao"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
           destroy-method="close">
@@ -27,24 +26,24 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="myDataSource"/>
-        <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
 
     <!--<bean id="categoryMapper" class="org.mybatis.spring.dao.MapperFactoryBean">-->
-        <!--<property name="mapperInterface" value="io.luan.jerry.category.daotegoryMapper"/>-->
-        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+    <!--<property name="mapperInterface" value="io.luan.jerry.category.daotegoryMapper"/>-->
+    <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
     <!--</bean>-->
 
     <bean
             class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
     <!--<bean id="myTxManager"-->
-          <!--class="org.springframework.orm.hibernate5.HibernateTransactionManager">-->
-        <!--<property name="sessionFactory" ref="mySessionFactory"/>-->
+    <!--class="org.springframework.orm.hibernate5.HibernateTransactionManager">-->
+    <!--<property name="sessionFactory" ref="mySessionFactory"/>-->
     <!--</bean>-->
 
     <!--&lt;!&ndash; Enables Transactions @Transactional &ndash;&gt;-->
     <!--<tx:annotation-driven transaction-manager="myTxManager"-->
-                          <!--order="2"/>-->
+    <!--order="2"/>-->
 
 </beans>

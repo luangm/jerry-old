@@ -15,5 +15,14 @@
     <modules>
         <module>jerry-item-client</module>
         <module>jerry-item-provider</module>
+        <module>jerry-item-core</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.luan</groupId>
+            <artifactId>jerry-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

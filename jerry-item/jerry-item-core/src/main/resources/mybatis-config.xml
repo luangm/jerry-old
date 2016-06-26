@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="Item" type="io.luan.jerry.item.po.ItemPO"/>
+        <typeAlias alias="Product" type="io.luan.jerry.item.po.ProductPO"/>
+        <typeAlias alias="Sku" type="io.luan.jerry.item.po.SkuPO"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="mappers/ItemDAO.xml"/>
+        <mapper resource="mappers/ProductDAO.xml"/>
+        <mapper resource="mappers/SkuDAO.xml"/>
+    </mappers>
+
+</configuration>

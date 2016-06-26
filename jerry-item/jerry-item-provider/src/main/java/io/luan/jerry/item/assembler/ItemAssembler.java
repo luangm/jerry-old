@@ -1,8 +1,9 @@
 package io.luan.jerry.item.assembler;
 
-import io.luan.jerry.item.domain.ItemDO;
-import io.luan.jerry.item.sdo.ItemSDO;
-import io.luan.jerry.item.sdo.ProductSDO;
+import io.luan.jerry.item.domain.Item;
+import io.luan.jerry.item.po.ItemPO;
+import io.luan.jerry.shop.domain.Shop;
+import io.luan.jerry.shop.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,17 +16,13 @@ public class ItemAssembler {
     @Autowired
     private ProductAssembler productAssembler;
 
-    public ItemSDO assemble(ItemDO itemDO) {
-        ItemSDO sdo = new ItemSDO();
+    public Item assemble(ItemPO itemPO) {
+        Item item = new Item();
 
-        sdo.setProductId(itemDO.getProductId());
-        if (itemDO.getProduct() != null) {
-            ProductSDO productSDO = productAssembler.assemble(itemDO.getProduct());
-            sdo.setProduct(productSDO);
-        }
+        item.setId(itemPO.getId());
+        item.setProductId(itemPO.getProductId());
+        item.setSellerId(itemPO.getSellerId());
 
-        sdo.setSellerId(itemDO.getSellerId());
-
-        return sdo;
+        return item;
     }
 }
