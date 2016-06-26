@@ -15,7 +15,7 @@
         id = #{shopId}
     </select>
 
-    <resultMap id="shopResultMap" type="ShopDO">
+    <resultMap id="shopResultMap" type="Shop">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
     </resultMap>

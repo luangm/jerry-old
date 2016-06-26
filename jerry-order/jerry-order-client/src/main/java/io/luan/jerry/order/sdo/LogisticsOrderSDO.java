@@ -1,6 +1,6 @@
 package io.luan.jerry.order.sdo;
 
-import io.luan.jerry.logistics.sdo.LogisticsProviderSDO;
+import io.luan.jerry.logistics.domain.LogisticsProvider;
 import lombok.Data;
 
 /**
@@ -10,5 +10,5 @@ import lombok.Data;
 public class LogisticsOrderSDO {
     private Long id;
     private Integer logisticsProviderId;
-    private LogisticsProviderSDO logisticsProvider;
+    private LogisticsProvider logisticsProvider;
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="io.luan.jerry.shop.domain.ShopDO" alias="ShopDO"/>
+        <typeAlias type="io.luan.jerry.shop.po.ShopPO" alias="Shop"/>
     </typeAliases>
     <mappers>
         <mapper resource="mappers/ShopDAO.xml"/>

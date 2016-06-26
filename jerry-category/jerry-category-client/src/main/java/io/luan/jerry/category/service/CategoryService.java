@@ -1,6 +1,6 @@
 package io.luan.jerry.category.service;
 
-import io.luan.jerry.category.sdo.Category;
+import io.luan.jerry.category.domain.Category;
 
 /**
  * Service interfaces for Category

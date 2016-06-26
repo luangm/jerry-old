@@ -1,6 +1,6 @@
 package io.luan.jerry.item.assembler;
 
-import io.luan.jerry.category.sdo.Category;
+import io.luan.jerry.category.domain.Category;
 import io.luan.jerry.category.service.CategoryService;
 import io.luan.jerry.item.domain.ProductDO;
 import io.luan.jerry.item.sdo.ProductSDO;

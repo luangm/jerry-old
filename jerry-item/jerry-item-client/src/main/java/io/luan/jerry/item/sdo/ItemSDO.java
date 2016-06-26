@@ -1,6 +1,6 @@
 package io.luan.jerry.item.sdo;
 
-import io.luan.jerry.shop.dto.Shop;
+import io.luan.jerry.shop.domain.Shop;
 import lombok.Data;
 
 /**

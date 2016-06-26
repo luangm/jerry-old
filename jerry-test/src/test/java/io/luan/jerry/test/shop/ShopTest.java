@@ -1,9 +1,7 @@
 package io.luan.jerry.test.shop;
 
-import io.luan.jerry.shop.dto.Shop;
+import io.luan.jerry.shop.domain.Shop;
 import io.luan.jerry.shop.service.ShopService;
-import io.luan.jerry.user.sdo.User;
-import io.luan.jerry.user.service.UserService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

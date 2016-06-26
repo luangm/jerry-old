@@ -2,8 +2,8 @@ package io.luan.jerry.user.service.impl;
 
 import io.luan.jerry.user.assembler.UserAssembler;
 import io.luan.jerry.user.dao.UserDAO;
-import io.luan.jerry.user.domain.UserDO;
-import io.luan.jerry.user.sdo.User;
+import io.luan.jerry.user.domain.User;
+import io.luan.jerry.user.po.UserPO;
 import io.luan.jerry.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -21,9 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(long userId) {
-        UserDO userDO = userDAO.getUser(userId);
-        User sdo = userAssembler.assemble(userDO);
-        return sdo;
+        UserPO userPO = userDAO.getUser(userId);
+        User user = userAssembler.assemble(userPO);
+        return user;
     }
 
     @Override

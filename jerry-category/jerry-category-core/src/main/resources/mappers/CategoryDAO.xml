@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.luan.jerry.category.dao.CategoryDAO">
+
+    <cache/>
+
+    <select id="getCategory" parameterType="int" resultMap="categoryResultMap">
+        SELECT
+        *
+        FROM
+        categories
+        WHERE
+        category_id = #{categoryId}
+    </select>
+
+    <select id="getCategoryList" resultMap="categoryResultMap">
+        SELECT
+        *
+        FROM
+        categories
+    </select>
+
+    <select id="selectChildren" parameterType="int" resultMap="categoryResultMap">
+        SELECT
+        *
+        FROM
+        categories
+        WHERE
+        parent_id = #{parentId}
+    </select>
+
+    <resultMap id="categoryResultMap" type="Category">
+        <id property="categoryId" column="category_id"/>
+        <result property="name" column="name"/>
+        <result property="parentId" column="parent_id"/>
+        <collection property="children" column="category_id" javaType="arrayList" select="selectChildren"
+                    ofType="Category"/>
+    </resultMap>
+
+</mapper>

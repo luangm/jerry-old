@@ -1,6 +1,6 @@
 package io.luan.jerry.test.user;
 
-import io.luan.jerry.user.sdo.User;
+import io.luan.jerry.user.domain.User;
 import io.luan.jerry.user.service.UserService;
 import org.junit.BeforeClass;
 import org.junit.Test;

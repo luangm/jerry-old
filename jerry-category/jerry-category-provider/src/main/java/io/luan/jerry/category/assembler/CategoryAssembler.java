@@ -1,7 +1,7 @@
 package io.luan.jerry.category.assembler;
 
-import io.luan.jerry.category.domain.CategoryDO;
-import io.luan.jerry.category.sdo.Category;
+import io.luan.jerry.category.domain.Category;
+import io.luan.jerry.category.po.CategoryPO;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,19 +10,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class CategoryAssembler {
 
-    public Category assemble(CategoryDO categoryDO) {
-        Category sdo = new Category();
-        sdo.setCategoryId(categoryDO.getCategoryId());
-        sdo.setName(categoryDO.getName());
-        sdo.setParentId(categoryDO.getParentId());
+    public Category assemble(CategoryPO po) {
+        Category category = new Category();
+        category.setId(po.getCategoryId());
+        category.setName(po.getName());
+        category.setParentId(po.getParentId());
 
-        if (categoryDO.getChildren() != null) {
-            for (CategoryDO child : categoryDO.getChildren()) {
+        if (po.getChildren() != null) {
+            for (CategoryPO child : po.getChildren()) {
                 Category childSdo = assemble(child);
-                sdo.getChildren().add(childSdo);
+                category.getChildren().add(childSdo);
             }
         }
 
-        return sdo;
+        return category;
     }
 }

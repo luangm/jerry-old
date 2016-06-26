@@ -1,7 +1,7 @@
 package io.luan.jerry.shop.assembler;
 
-import io.luan.jerry.shop.domain.ShopDO;
-import io.luan.jerry.shop.dto.Shop;
+import io.luan.jerry.shop.po.ShopPO;
+import io.luan.jerry.shop.domain.Shop;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ShopAssembler {
 
-    public Shop assemble(ShopDO shopDO) {
+    public Shop assemble(ShopPO shopDO) {
         Shop dto = new Shop();
         dto.setId(shopDO.getId());
         dto.setName(shopDO.getName());

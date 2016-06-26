@@ -1,6 +1,6 @@
 package io.luan.jerry.item.sdo;
 
-import io.luan.jerry.category.sdo.Category;
+import io.luan.jerry.category.domain.Category;
 import lombok.Data;
 
 /**

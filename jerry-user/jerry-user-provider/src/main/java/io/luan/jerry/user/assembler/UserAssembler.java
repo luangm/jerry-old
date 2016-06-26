@@ -1,7 +1,7 @@
 package io.luan.jerry.user.assembler;
 
-import io.luan.jerry.user.domain.UserDO;
-import io.luan.jerry.user.sdo.User;
+import io.luan.jerry.user.domain.User;
+import io.luan.jerry.user.po.UserPO;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserAssembler {
 
-    public User assemble(UserDO userDO) {
+    public User assemble(UserPO po) {
         User sdo = new User();
-        sdo.setId(userDO.getId());
-        sdo.setUsername(userDO.getUsername());
-        sdo.setName(userDO.getName());
-        sdo.setPhone(userDO.getPhone());
-        sdo.setCreateTime(userDO.getCreateTime());
-        sdo.setUpdateTime(userDO.getUpdateTime());
+        sdo.setId(po.getId());
+        sdo.setUsername(po.getUsername());
+        sdo.setName(po.getName());
+        sdo.setPhone(po.getPhone());
+        sdo.setCreateTime(po.getCreateTime());
+        sdo.setUpdateTime(po.getUpdateTime());
 
         return sdo;
     }

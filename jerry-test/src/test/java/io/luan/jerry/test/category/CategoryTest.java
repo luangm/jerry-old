@@ -1,6 +1,6 @@
 package io.luan.jerry.test.category;
 
-import io.luan.jerry.category.sdo.Category;
+import io.luan.jerry.category.domain.Category;
 import io.luan.jerry.category.service.CategoryService;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -31,7 +31,7 @@ public class CategoryTest {
 
     @Test
     public void testProductCategory() {
-        Category sdo = catService.getCategory(1);
-        System.out.println(sdo);
+        Category category = catService.getCategory(1);
+        System.out.println(category);
     }
 }

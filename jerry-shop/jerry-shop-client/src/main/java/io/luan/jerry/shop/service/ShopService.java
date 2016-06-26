@@ -1,6 +1,6 @@
 package io.luan.jerry.shop.service;
 
-import io.luan.jerry.shop.dto.Shop;
+import io.luan.jerry.shop.domain.Shop;
 
 /**
  * Created by Miao on 6/25/2016.
