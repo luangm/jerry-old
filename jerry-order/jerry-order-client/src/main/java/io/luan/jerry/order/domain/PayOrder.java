@@ -1,4 +1,4 @@
-package io.luan.jerry.order.sdo;
+package io.luan.jerry.order.domain;
 
 import lombok.Data;
 
@@ -6,6 +6,6 @@ import lombok.Data;
  * SDO for Order's Pay Information
  */
 @Data
-public class PayOrderSDO {
+public class PayOrder {
     private Long id;
 }

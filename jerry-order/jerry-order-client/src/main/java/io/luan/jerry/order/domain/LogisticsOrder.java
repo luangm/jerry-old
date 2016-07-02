@@ -1,13 +1,13 @@
-package io.luan.jerry.order.sdo;
+package io.luan.jerry.order.domain;
 
 import io.luan.jerry.logistics.domain.LogisticsProvider;
 import lombok.Data;
 
 /**
- * SDO for order's logistics info
+ * order's logistics info
  */
 @Data
-public class LogisticsOrderSDO {
+public class LogisticsOrder {
     private Long id;
     private Integer logisticsProviderId;
     private LogisticsProvider logisticsProvider;
