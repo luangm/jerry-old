@@ -7,5 +7,5 @@ import io.luan.jerry.shop.domain.Shop;
  */
 public interface ShopService {
 
-    Shop getShop(long shopId);
+    Shop getShop(Long shopId);
 }

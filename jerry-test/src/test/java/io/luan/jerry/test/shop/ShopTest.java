@@ -31,7 +31,7 @@ public class ShopTest {
 
     @Test
     public void test_getShop() {
-        Shop sdo = shopService.getShop(1);
+        Shop sdo = shopService.getShop(2L);
         System.out.println(sdo);
     }
 }

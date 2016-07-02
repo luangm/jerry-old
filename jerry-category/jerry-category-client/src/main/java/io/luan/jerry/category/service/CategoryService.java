@@ -7,5 +7,5 @@ import io.luan.jerry.category.domain.Category;
  */
 public interface CategoryService {
 
-    Category getCategory(int categoryId);
+    Category getCategory(Integer categoryId);
 }

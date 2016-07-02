@@ -7,7 +7,7 @@ import io.luan.jerry.user.domain.User;
  */
 public interface UserService {
 
-    User getUser(long userId);
+    User getUser(Long userId);
 
     User getUserByUsername(String username);
 }

@@ -6,5 +6,5 @@ import io.luan.jerry.item.po.ItemPO;
  * Created by Miao on 6/26/2016.
  */
 public interface ItemDAO {
-    ItemPO getItem(long itemId);
+    ItemPO getItem(Long itemId);
 }

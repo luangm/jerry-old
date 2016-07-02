@@ -13,4 +13,5 @@
     <dubbo:service interface="io.luan.jerry.shop.service.ShopService"
                    ref="shopService"/>
 
+    <dubbo:reference interface="io.luan.jerry.user.service.UserService" id="userService"/>
 </beans> 

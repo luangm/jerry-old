@@ -6,37 +6,35 @@
 
     <cache/>
 
-    <select id="getCategory" parameterType="int" resultMap="categoryResultMap">
+    <select id="getCategory" resultMap="categoryResultMap">
         SELECT
-        *
+        p.*, count(c.id) as child_count
         FROM
-        categories
+        jerry_category.categories p
+        LEFT JOIN
+        categories c ON c.parent_id = p.id
         WHERE
-        category_id = #{categoryId}
+        p.id = #{categoryId}
+        GROUP BY
+        p.id
     </select>
 
     <select id="getCategoryList" resultMap="categoryResultMap">
         SELECT
-        *
+        p.*, count(c.id) as child_count
         FROM
-        categories
-    </select>
-
-    <select id="selectChildren" parameterType="int" resultMap="categoryResultMap">
-        SELECT
-        *
-        FROM
-        categories
-        WHERE
-        parent_id = #{parentId}
+        jerry_category.categories p
+        LEFT JOIN
+        categories c ON c.parent_id = p.id
+        GROUP BY
+        p.id
     </select>
 
     <resultMap id="categoryResultMap" type="Category">
         <id property="categoryId" column="category_id"/>
-        <result property="name" column="name"/>
         <result property="parentId" column="parent_id"/>
-        <collection property="children" column="category_id" javaType="arrayList" select="selectChildren"
-                    ofType="Category"/>
+        <result property="sortOrder" column="sort_order"/>
+        <result property="childCount" column="child_count"/>
     </resultMap>
 
 </mapper>

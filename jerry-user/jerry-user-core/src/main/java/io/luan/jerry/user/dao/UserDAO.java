@@ -6,7 +6,7 @@ import io.luan.jerry.user.po.UserPO;
  * Created by Miao on 6/25/2016.
  */
 public interface UserDAO {
-    UserPO getUser(long userId);
 
+    UserPO getUser(Long userId);
     UserPO getUserByUsername(String username);
 }

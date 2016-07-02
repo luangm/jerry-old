@@ -6,7 +6,7 @@
 
     <cache/>
 
-    <select id="getProduct" parameterType="long" resultMap="productResultMap">
+    <select id="getProduct" resultMap="productResultMap">
         SELECT
         *
         FROM
@@ -17,6 +17,7 @@
 
     <resultMap id="productResultMap" type="Product">
         <id property="id" column="id"/>
+        <id property="categoryId" column="category_id"/>
     </resultMap>
 
 </mapper>

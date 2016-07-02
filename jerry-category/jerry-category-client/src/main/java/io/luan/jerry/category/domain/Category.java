@@ -17,15 +17,11 @@ public class Category implements Serializable {
     private Integer id;
     private Integer parentId;
     private String name;
-    private int sortOrder;
-    private List<Category> children;
-
-    public Category() {
-        children = new ArrayList<>();
-    }
+    private Integer sortOrder;
+    private Integer childCount;
 
     public boolean isLeaf() {
-        return children == null || children.isEmpty();
+        return childCount == 0;
     }
 
     public boolean isRoot() {

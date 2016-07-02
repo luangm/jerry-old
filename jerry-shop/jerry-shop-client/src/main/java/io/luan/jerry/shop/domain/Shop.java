@@ -4,6 +4,7 @@ import io.luan.jerry.user.domain.User;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by Miao on 6/25/2016.
@@ -19,4 +20,7 @@ public class Shop implements Serializable {
 
     private Long ownerId;
     private User owner;
+
+    private Date createTime;
+    private Date updateTime;
 }

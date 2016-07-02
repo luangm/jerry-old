@@ -3,6 +3,7 @@ package io.luan.jerry.shop.po;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Data Object for Shop
@@ -15,4 +16,6 @@ public class ShopPO implements Serializable {
     private Long id;
     private String name;
     private Long ownerId;
+    private Date createTime;
+    private Date updateTime;
 }

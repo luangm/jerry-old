@@ -31,7 +31,7 @@ public class UserTest {
 
     @Test
     public void test_getUser() {
-        User sdo = userService.getUser(1);
+        User sdo = userService.getUser(1L);
         System.out.println(sdo);
     }
 }

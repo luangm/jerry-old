@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface CategoryDAO {
 
-    CategoryPO getCategory(int categoryId);
+    CategoryPO getCategory(Integer categoryId);
 
     List<CategoryPO> getCategoryList();
 }

@@ -6,7 +6,7 @@
 
     <cache/>
 
-    <select id="getItem" parameterType="long" resultMap="itemResultMap">
+    <select id="getItem" resultMap="itemResultMap">
         SELECT
         *
         FROM
