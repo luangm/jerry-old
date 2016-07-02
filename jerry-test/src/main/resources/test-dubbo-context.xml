@@ -28,6 +28,12 @@
     <dubbo:reference id="itemService"
                      interface="io.luan.jerry.item.service.ItemService" check="false"/>
 
+    <dubbo:reference id="productService"
+                     interface="io.luan.jerry.item.service.ProductService" check="false"/>
+
+    <dubbo:reference id="skuService"
+                     interface="io.luan.jerry.item.service.SkuService" check="false"/>
+
     <!--<dubbo:reference id="productCategoryService"-->
     <!--interface="io.qianmo.category.service.ProductCategoryService" check="false" />-->
     <!--<dubbo:reference id="attributeService"-->

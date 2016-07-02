@@ -12,6 +12,10 @@ import io.luan.jerry.shop.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Guangmiao Luan
+ * @since 7/2/2016
+ */
 @Service("itemService")
 public class ItemServiceImpl implements ItemService {
 

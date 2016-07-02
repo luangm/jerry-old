@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Miao on 6/25/2016.
+ * @author Guangmiao Luan
+ * @since 7/2/2016
  */
 @Component
 public class ItemConverter {

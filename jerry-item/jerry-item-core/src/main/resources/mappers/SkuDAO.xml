@@ -6,7 +6,7 @@
 
     <cache/>
 
-    <select id="getSku" parameterType="long" resultMap="skuResultMap">
+    <select id="getSku" resultMap="skuResultMap">
         SELECT
         *
         FROM
@@ -15,8 +15,18 @@
         id = #{skuId}
     </select>
 
+    <select id="getSkusByItemId" resultMap="skuResultMap">
+        SELECT
+        *
+        FROM
+        skus
+        WHERE
+        item_id = #{itemId}
+    </select>
+
     <resultMap id="skuResultMap" type="Sku">
         <id property="id" column="id"/>
+        <result property="itemId" column="item_id"/>
     </resultMap>
 
 </mapper>

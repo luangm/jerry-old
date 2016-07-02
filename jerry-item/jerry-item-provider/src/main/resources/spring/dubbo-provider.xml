@@ -5,16 +5,20 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-    
+
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="io.luan.jerry.item.service.ItemService"
                    ref="itemService"/>
     <dubbo:service interface="io.luan.jerry.item.service.ProductService"
                    ref="productService"/>
+    <dubbo:service interface="io.luan.jerry.item.service.SkuService"
+                   ref="skuService"/>
 
     <!-- 声明需要调用的接口 -->
-    <dubbo:reference id="shopService" interface="io.luan.jerry.shop.service.ShopService"/>
-    <dubbo:reference id="categoryService" interface="io.luan.jerry.category.service.CategoryService"/>
+    <dubbo:reference id="shopService"
+                     interface="io.luan.jerry.shop.service.ShopService"/>
+    <dubbo:reference id="categoryService"
+                     interface="io.luan.jerry.category.service.CategoryService"/>
 
 
 </beans> 

@@ -7,6 +7,8 @@ import java.io.Serializable;
 
 /**
  * Item - Product for a seller
+ *
+ * The item has a detail page where it will display a list of skus for this item
  */
 @Data
 public class Item implements Serializable {
