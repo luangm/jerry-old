@@ -2,14 +2,18 @@ package io.luan.jerry.order.domain;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * Service Data Object for Order
  */
 @Data
-public class Order {
+public class Order implements Serializable {
 
-    private Long id;
+    private static final long serialVersionUID = 1L;
+
     private BizOrder bizOrder;
     private LogisticsOrder logisticsOrder;
     private PayOrder payOrder;
+
 }

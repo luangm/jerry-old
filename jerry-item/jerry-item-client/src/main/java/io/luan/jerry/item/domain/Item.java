@@ -4,10 +4,11 @@ import io.luan.jerry.shop.domain.Shop;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Item - Product for a seller
- *
+ * <p>
  * The item has a detail page where it will display a list of skus for this item
  */
 @Data
@@ -23,4 +24,5 @@ public class Item implements Serializable {
     private Long sellerId;
     private Shop seller;
 
+    private List<Sku> skuList;
 }

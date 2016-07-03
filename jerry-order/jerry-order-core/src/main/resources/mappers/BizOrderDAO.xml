@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.luan.jerry.order.dao.BizOrderDAO">
+
+    <cache/>
+
+    <select id="getBizOrder" resultMap="bizOrderResultMap">
+        SELECT
+        *, biz_orders.id AS order_id, biz_order_lines.id as line_id
+        FROM
+        biz_orders
+        LEFT JOIN
+        biz_order_lines ON biz_orders.id = biz_order_lines.biz_order_id
+        WHERE
+        biz_orders.id = #{bizOrderId}
+    </select>
+
+    <resultMap id="bizOrderResultMap" type="BizOrder">
+        <id property="id" column="order_id"/>
+        <collection property="orderLines" resultMap="bizOrderLineResultMap">
+
+        </collection>
+    </resultMap>
+
+    <resultMap id="bizOrderLineResultMap" type="BizOrderLine">
+        <id property="id" column="line_id"/>
+    </resultMap>
+
+</mapper>

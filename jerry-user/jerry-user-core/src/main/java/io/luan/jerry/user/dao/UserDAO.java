@@ -8,5 +8,5 @@ import io.luan.jerry.user.po.UserPO;
 public interface UserDAO {
 
     UserPO getUser(Long userId);
-    UserPO getUserByUsername(String username);
+    UserPO getUserByNick(String nick);
 }

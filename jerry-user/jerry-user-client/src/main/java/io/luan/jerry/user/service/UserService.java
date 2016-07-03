@@ -9,5 +9,5 @@ public interface UserService {
 
     User getUser(Long userId);
 
-    User getUserByUsername(String username);
+    User getUserByNick(String nick);
 }

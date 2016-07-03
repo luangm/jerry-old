@@ -13,7 +13,7 @@ public class UserConverter {
     public User convert(UserPO po) {
         User user = new User();
         user.setId(po.getId());
-        user.setUsername(po.getUsername());
+        user.setNick(po.getNick());
         user.setName(po.getName());
         user.setPhone(po.getPhone());
         user.setCreateTime(po.getCreateTime());
