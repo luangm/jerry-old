@@ -4,8 +4,12 @@
     <typeAliases>
         <typeAlias type="io.luan.jerry.order.po.BizOrderPO" alias="BizOrder"/>
         <typeAlias type="io.luan.jerry.order.po.BizOrderLinePO" alias="BizOrderLine"/>
+        <typeAlias type="io.luan.jerry.order.po.LogisticsOrderPO" alias="LogisticsOrder"/>
+        <typeAlias type="io.luan.jerry.order.po.PayOrderPO" alias="PayOrder"/>
     </typeAliases>
     <mappers>
         <mapper resource="mappers/BizOrderDAO.xml"/>
+        <mapper resource="mappers/LogisticsOrderDAO.xml"/>
+        <mapper resource="mappers/PayOrderDAO.xml"/>
     </mappers>
 </configuration>

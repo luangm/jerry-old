@@ -8,24 +8,36 @@
 
     <select id="getBizOrder" resultMap="bizOrderResultMap">
         SELECT
-        *, biz_orders.id AS order_id, biz_order_lines.id as line_id
+        *
         FROM
         biz_orders
         LEFT JOIN
-        biz_order_lines ON biz_orders.id = biz_order_lines.biz_order_id
+        biz_order_lines ON id_biz_order = biz_order_lines.biz_order_id
         WHERE
-        biz_orders.id = #{bizOrderId}
+        id_biz_order = #{bizOrderId}
     </select>
 
     <resultMap id="bizOrderResultMap" type="BizOrder">
-        <id property="id" column="order_id"/>
-        <collection property="orderLines" resultMap="bizOrderLineResultMap">
-
-        </collection>
+        <id property="id" column="id_biz_order"/>
+        <result property="payOrderId" column="pay_order_id"/>
+        <result property="logisticsOrderId" column="logistics_order_id"/>
+        <result property="buyerId" column="buyer_id"/>
+        <result property="buyerNick" column="buyer_nick"/>
+        <result property="sellerId" column="seller_id"/>
+        <result property="sellerName" column="seller_name"/>
+        <result property="status" column="biz_status"/>
+        <collection property="orderLines" resultMap="bizOrderLineResultMap"/>
     </resultMap>
 
     <resultMap id="bizOrderLineResultMap" type="BizOrderLine">
-        <id property="id" column="line_id"/>
+        <id property="id" column="id_biz_order_line"/>
+        <result property="bizOrderId" column="biz_order_id"/>
+        <result property="itemId" column="item_id"/>
+        <result property="skuId" column="sku_id"/>
+        <result property="unitPrice" column="unit_price"/>
+        <result property="quantity" column="quantity"/>
+        <result property="itemTitle" column="item_title"/>
+        <result property="skuTitle" column="sku_title"/>
     </resultMap>
 
 </mapper>

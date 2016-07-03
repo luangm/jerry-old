@@ -14,10 +14,13 @@ public class BizOrderLinePO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+    private Long bizOrderId;
 
     private Long itemId;
     private Long skuId;
     private Long unitPrice;
     private Integer quantity;
 
+    private String itemTitle;
+    private String skuTitle;
 }

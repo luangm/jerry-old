@@ -14,6 +14,7 @@ public class LogisticsOrder implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+    private LogisticsOrderStatus status;
     private Integer logisticsProviderId;
     private LogisticsProvider logisticsProvider;
 }

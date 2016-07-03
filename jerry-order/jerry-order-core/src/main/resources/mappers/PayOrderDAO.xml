@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.luan.jerry.order.dao.PayOrderDAO">
+
+    <cache/>
+
+    <select id="getPayOrder" resultMap="payOrderResultMap">
+        SELECT
+        *
+        FROM
+        pay_orders
+        WHERE
+        id_pay_order = #{payOrderId}
+    </select>
+
+    <resultMap id="payOrderResultMap" type="PayOrder">
+        <id property="id" column="id_pay_order"/>
+        <result property="status" column="pay_status"/>
+    </resultMap>
+
+</mapper>
