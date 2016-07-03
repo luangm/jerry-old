@@ -19,6 +19,9 @@
         <module>jerry-order</module>
         <module>jerry-test</module>
         <module>jerry-logistics</module>
+        <module>jerry-pay</module>
+        <module>jerry-buy</module>
+        <module>jerry-cart</module>
     </modules>
 
     <properties>

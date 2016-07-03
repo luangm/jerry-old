@@ -9,14 +9,29 @@ import lombok.Getter;
 public enum PayOrderStatus {
 
     /**
-     * The Logistics Order is not yet created
+     * The Pay Order is not created
      */
-    NotCreated(0, "NotCreated"),
+    NoOrder(0, "NoOrder"),
 
     /**
-     * The Logistics Order is created
+     * The Pay Order is created but not yet paid
      */
-    Created(1, "Created");
+    NotPaid(1, "NotPaid"),
+
+    /**
+     * The Pay order is paid
+     */
+    Paid(2, "Paid"),
+
+    /**
+     * The pay order is refuned
+     */
+    Refunded(3, "Refunded"),
+
+    /**
+     * The pay order is closed by system
+     */
+    Closed(9, "Closed");
 
     @Getter
     private int index;
