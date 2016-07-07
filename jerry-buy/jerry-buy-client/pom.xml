@@ -26,12 +26,6 @@
 
         <dependency>
             <groupId>io.luan</groupId>
-            <artifactId>jerry-shop-client</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.luan</groupId>
             <artifactId>jerry-order-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

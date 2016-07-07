@@ -20,7 +20,7 @@
 
         <dependency>
             <groupId>io.luan</groupId>
-            <artifactId>jerry-shop-client</artifactId>
+            <artifactId>jerry-user-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

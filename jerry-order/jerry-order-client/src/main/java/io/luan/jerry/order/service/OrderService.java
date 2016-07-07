@@ -10,5 +10,5 @@ public interface OrderService {
 
     Order getOrder(Long orderId);
 
-
+    Order saveOrder(Order order);
 }

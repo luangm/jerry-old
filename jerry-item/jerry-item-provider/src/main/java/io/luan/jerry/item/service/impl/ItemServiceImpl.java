@@ -7,8 +7,8 @@ import io.luan.jerry.item.domain.Product;
 import io.luan.jerry.item.po.ItemPO;
 import io.luan.jerry.item.service.ItemService;
 import io.luan.jerry.item.service.ProductService;
-import io.luan.jerry.shop.domain.Shop;
-import io.luan.jerry.shop.service.ShopService;
+import io.luan.jerry.user.domain.User;
+import io.luan.jerry.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class ItemServiceImpl implements ItemService {
     private ItemConverter itemConverter;
 
     @Autowired
-    private ShopService shopService;
+    private UserService userService;
 
     @Autowired
     private ProductService productService;
@@ -45,7 +45,7 @@ public class ItemServiceImpl implements ItemService {
         Item item = itemConverter.convert(po);
 
         if (item.getSellerId() != null) {
-            Shop seller = shopService.getShop(item.getSellerId());
+            User seller = userService.getUser(item.getSellerId());
             item.setSeller(seller);
         }
 

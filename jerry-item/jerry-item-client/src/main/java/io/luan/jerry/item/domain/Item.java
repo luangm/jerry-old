@@ -1,6 +1,6 @@
 package io.luan.jerry.item.domain;
 
-import io.luan.jerry.shop.domain.Shop;
+import io.luan.jerry.user.domain.User;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -22,7 +22,7 @@ public class Item implements Serializable {
     private Product product;
 
     private Long sellerId;
-    private Shop seller;
+    private User seller;
 
     private List<Sku> skuList;
 }

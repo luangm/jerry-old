@@ -15,8 +15,8 @@
                    ref="skuService"/>
 
     <!-- 声明需要调用的接口 -->
-    <dubbo:reference id="shopService"
-                     interface="io.luan.jerry.shop.service.ShopService"/>
+    <dubbo:reference id="userService"
+                     interface="io.luan.jerry.user.service.UserService"/>
     <dubbo:reference id="categoryService"
                      interface="io.luan.jerry.category.service.CategoryService"/>
 
