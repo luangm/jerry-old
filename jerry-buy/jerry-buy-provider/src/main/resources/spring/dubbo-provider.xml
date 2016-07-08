@@ -7,13 +7,11 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="io.luan.jerry.order.service.OrderService"
-                   ref="orderService"/>
-    <dubbo:service interface="io.luan.jerry.order.service.OrderStoreService"
-                   ref="orderStoreService"/>
+    <dubbo:service interface="io.luan.jerry.buy.service.CreatingOrderService"
+                   ref="creatingOrderService"/>
 
     <!-- 依赖的接口 -->
     <dubbo:reference interface="io.luan.jerry.user.service.UserService" id="userService"/>
-    <dubbo:reference interface="io.luan.jerry.shop.service.ShopService" id="shopService"/>
     <dubbo:reference interface="io.luan.jerry.item.service.ItemService" id="itemService"/>
+    <dubbo:reference interface="io.luan.jerry.order.service.OrderStoreService" id="orderStoreService"/>
 </beans> 

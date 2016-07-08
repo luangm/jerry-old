@@ -37,6 +37,11 @@
             <artifactId>jerry-order-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>io.luan</groupId>
+            <artifactId>jerry-buy-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- Spring -->
         <dependency>
@@ -69,5 +74,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.38</version>
         </dependency>
+
     </dependencies>
 </project>

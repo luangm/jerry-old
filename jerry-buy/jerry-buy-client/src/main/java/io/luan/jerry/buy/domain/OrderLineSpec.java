@@ -1,6 +1,8 @@
 package io.luan.jerry.buy.domain;
 
 import io.luan.jerry.common.domain.BaseDO;
+import io.luan.jerry.item.domain.Item;
+import io.luan.jerry.item.domain.Sku;
 import lombok.Data;
 
 /**
@@ -13,4 +15,9 @@ import lombok.Data;
 @Data
 public class OrderLineSpec extends BaseDO {
 
+    private Item item;
+
+    private Sku sku;
+
+    private int quantity;
 }

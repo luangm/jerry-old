@@ -37,6 +37,9 @@
     <dubbo:reference id="orderService"
                      interface="io.luan.jerry.order.service.OrderService" check="false"/>
 
+    <dubbo:reference id="creatingOrderService"
+                     interface="io.luan.jerry.buy.service.CreatingOrderService" check="false"/>
+
     <!--<dubbo:reference id="productCategoryService"-->
     <!--interface="io.qianmo.category.service.ProductCategoryService" check="false" />-->
     <!--<dubbo:reference id="attributeService"-->

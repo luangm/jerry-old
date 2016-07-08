@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * A full in memory model of an order
+ * This is used to send to OrderStoreService to store the order
+ *
  * @author Guangmiao Luan
  * @since 7/7/2016
  */

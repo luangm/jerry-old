@@ -1,6 +1,7 @@
 package io.luan.jerry.buy.dto;
 
 import io.luan.jerry.common.dto.BaseDTO;
+import lombok.Data;
 
 import static com.google.common.base.Preconditions.checkState;
 
@@ -8,6 +9,7 @@ import static com.google.common.base.Preconditions.checkState;
  * @author Guangmiao Luan
  * @since 7/7/2016
  */
+@Data
 public class OrderLineDTO extends BaseDTO {
 
     /**
