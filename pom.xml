@@ -23,6 +23,9 @@
         <module>jerry-buy</module>
         <module>jerry-cart</module>
         <module>jerry-promo</module>
+        <module>jerry-finance</module>
+        <module>jerry-messenger</module>
+        <module>jerry-sell</module>
     </modules>
 
     <properties>
@@ -57,13 +60,23 @@
         <file_encoding>UTF-8</file_encoding>
 
         <assembly_version>2.6</assembly_version>
-        <appassembler_version>1.10</appassembler_version>
 
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.luan</groupId>
+                <artifactId>jerry-common-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.luan</groupId>
+                <artifactId>jerry-common-provider</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- Common libs -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -291,11 +304,6 @@
                     </executions>
                 </plugin>
 
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>appassembler-maven-plugin</artifactId>
-                    <version>${appassembler_version}</version>
-                </plugin>
             </plugins>
         </pluginManagement>
     </build>
