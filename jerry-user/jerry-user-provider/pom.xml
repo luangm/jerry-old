@@ -10,8 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jerry-user-provider</artifactId>
-
-
+    
     <dependencies>
         <dependency>
             <groupId>io.luan</groupId>
