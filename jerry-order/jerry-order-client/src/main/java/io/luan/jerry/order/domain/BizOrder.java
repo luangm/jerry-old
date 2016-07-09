@@ -31,19 +31,9 @@ public class BizOrder implements Serializable {
     private Long buyerId;
 
     /**
-     * Redundant copy of User's nick, for convenience
-     */
-    private String buyerNick;
-
-    /**
      * Seller's user ID, use to query from userService
      */
     private Long sellerId;
-
-    /**
-     * Redundant, Seller's shop name.
-     */
-    private String sellerNick;
 
     /**
      * Order's line items

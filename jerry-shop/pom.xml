@@ -15,7 +15,7 @@
     <modules>
         <module>jerry-shop-client</module>
         <module>jerry-shop-provider</module>
-        <module>jerry-shop-core</module>
+        <module>jerry-shop-data</module>
     </modules>
 
     <dependencies>

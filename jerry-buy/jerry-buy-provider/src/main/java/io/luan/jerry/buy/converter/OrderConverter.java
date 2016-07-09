@@ -31,9 +31,7 @@ public class OrderConverter {
         BizOrder bizOrder = new BizOrder();
         bizOrder.setStatus(BizOrderStatus.Invisible);
         bizOrder.setBuyerId(orderSpec.getBuyer().getId());
-        bizOrder.setBuyerNick(orderSpec.getBuyer().getNick());
         bizOrder.setSellerId(orderSpec.getSeller().getId());
-        bizOrder.setSellerNick(orderSpec.getSeller().getNick());
 
         for (OrderLineSpec line : orderSpec.getOrderLines()) {
             BizOrderLine bizOrderLine = new BizOrderLine();
@@ -54,9 +52,7 @@ public class OrderConverter {
         LogisticsOrder logisticsOrder = new LogisticsOrder();
         logisticsOrder.setStatus(LogisticsOrderStatus.NoOrder);
         logisticsOrder.setBuyerId(orderSpec.getBuyer().getId());
-        logisticsOrder.setBuyerNick(orderSpec.getBuyer().getNick());
         logisticsOrder.setSellerId(orderSpec.getSeller().getId());
-        logisticsOrder.setSellerNick(orderSpec.getSeller().getNick());
         return logisticsOrder;
     }
 
@@ -64,9 +60,7 @@ public class OrderConverter {
         PayOrder payOrder = new PayOrder();
         payOrder.setStatus(PayOrderStatus.NoOrder);
         payOrder.setBuyerId(orderSpec.getBuyer().getId());
-        payOrder.setBuyerNick(orderSpec.getBuyer().getNick());
         payOrder.setSellerId(orderSpec.getSeller().getId());
-        payOrder.setSellerNick(orderSpec.getSeller().getNick());
         return payOrder;
     }
 }

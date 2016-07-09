@@ -15,7 +15,7 @@
     <modules>
         <module>jerry-item-client</module>
         <module>jerry-item-provider</module>
-        <module>jerry-item-core</module>
+        <module>jerry-item-data</module>
     </modules>
 
     <dependencies>

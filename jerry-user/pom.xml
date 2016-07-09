@@ -15,7 +15,7 @@
     <modules>
         <module>jerry-user-client</module>
         <module>jerry-user-provider</module>
-        <module>jerry-user-core</module>
+        <module>jerry-user-data</module>
     </modules>
 
     <dependencies>

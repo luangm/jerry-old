@@ -15,7 +15,7 @@
     <modules>
         <module>jerry-order-client</module>
         <module>jerry-order-provider</module>
-        <module>jerry-order-core</module>
+        <module>jerry-order-data</module>
     </modules>
 
     <dependencies>

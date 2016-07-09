@@ -15,7 +15,7 @@
     <modules>
         <module>jerry-category-client</module>
         <module>jerry-category-provider</module>
-        <module>jerry-category-core</module>
+        <module>jerry-category-data</module>
     </modules>
 
     <dependencies>
