@@ -32,9 +32,19 @@ public class BuyTest {
         request.setBuyerId(1L);
 
         OrderDTO order1 = new OrderDTO();
+
         OrderLineDTO orderLine1 = new OrderLineDTO();
         orderLine1.setItemId(1L);
+        orderLine1.setSkuId(1L);
+        orderLine1.setQuantity(2);
         order1.getOrderLines().add(orderLine1);
+
+        OrderLineDTO orderLine2 = new OrderLineDTO();
+        orderLine2.setItemId(2L);
+        orderLine2.setSkuId(3L);
+        orderLine2.setQuantity(3);
+        order1.getOrderLines().add(orderLine2);
+
         request.getOrders().add(order1);
 
         CreatingOrderResult result = creatingOrderService.createOrder(request);

@@ -1,8 +1,10 @@
 package io.luan.jerry.item.domain;
 
+import io.luan.jerry.category.domain.Category;
 import io.luan.jerry.user.domain.User;
 import lombok.Data;
 
+import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.List;
 
@@ -18,11 +20,26 @@ public class Item implements Serializable {
 
     private Long id;
 
+    private String title;
+
+    /**
+     * SPU (if exists)
+     */
+    @Nullable
     private Long productId;
+    @Nullable
     private Product product;
 
     private Long sellerId;
+    @Nullable
     private User seller;
+
+    /**
+     * Redundant from Product
+     */
+    private Integer categoryId;
+    @Nullable
+    private Category category;
 
     private List<Sku> skuList;
 }

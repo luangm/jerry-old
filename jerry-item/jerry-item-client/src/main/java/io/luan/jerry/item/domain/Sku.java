@@ -15,7 +15,21 @@ public class Sku implements Serializable {
 
     private Long id;
 
+    /**
+     * Description of the sku,
+     */
+    private String skuTitle;
+
     private Long itemId;
     private Item item;
-    
+
+    /**
+     * Inventory count
+     */
+    private Long inventory;
+
+    /**
+     * Current unit price
+     */
+    private Long price;
 }

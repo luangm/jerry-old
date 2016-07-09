@@ -27,6 +27,7 @@
     <resultMap id="skuResultMap" type="Sku">
         <id property="id" column="id"/>
         <result property="itemId" column="item_id"/>
+        <result property="skuTitle" column="sku_title"/>
     </resultMap>
 
 </mapper>

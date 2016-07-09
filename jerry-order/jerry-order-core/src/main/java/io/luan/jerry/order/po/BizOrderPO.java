@@ -27,7 +27,7 @@ public class BizOrderPO implements Serializable {
     private String buyerNick;
 
     private Long sellerId;
-    private String sellerName;
+    private String sellerNick;
 
     private List<BizOrderLinePO> orderLines = new ArrayList<>();
 }

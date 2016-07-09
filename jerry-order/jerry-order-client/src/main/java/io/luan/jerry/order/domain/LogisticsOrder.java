@@ -17,4 +17,24 @@ public class LogisticsOrder implements Serializable {
     private LogisticsOrderStatus status;
     private Integer logisticsProviderId;
     private LogisticsProvider logisticsProvider;
+
+    /**
+     * Buyer's ID, use to query from userService
+     */
+    private Long buyerId;
+
+    /**
+     * Redundant copy of User's nick, for convenience
+     */
+    private String buyerNick;
+
+    /**
+     * Seller's user ID, use to query from userService
+     */
+    private Long sellerId;
+
+    /**
+     * Redundant, Seller's shop name.
+     */
+    private String sellerNick;
 }

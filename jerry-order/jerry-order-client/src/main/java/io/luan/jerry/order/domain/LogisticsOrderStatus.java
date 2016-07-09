@@ -11,7 +11,7 @@ public enum LogisticsOrderStatus {
     /**
      * The Logistics Order is not yet created
      */
-    NotCreated(0, "NotCreated"),
+    NoOrder(0, "NoOrder"),
 
     /**
      * The Logistics Order is created

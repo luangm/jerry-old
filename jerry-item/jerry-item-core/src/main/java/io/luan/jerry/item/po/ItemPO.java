@@ -12,7 +12,10 @@ public class ItemPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
-    private Long productId;
-    private Long sellerId;
+    private long id;
+
+    private int categoryId;
+    private long productId;
+    private long sellerId;
+    private String title;
 }

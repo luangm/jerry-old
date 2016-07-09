@@ -16,6 +16,9 @@ public class SkuConverter {
 
         sku.setId(po.getId());
         sku.setItemId(po.getItemId());
+        sku.setSkuTitle(po.getSkuTitle());
+        sku.setInventory(po.getInventory());
+        sku.setPrice(po.getPrice());
 
         return sku;
     }

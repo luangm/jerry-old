@@ -15,7 +15,6 @@ import io.luan.jerry.order.po.BizOrderPO;
 import io.luan.jerry.order.po.LogisticsOrderPO;
 import io.luan.jerry.order.po.PayOrderPO;
 import io.luan.jerry.order.service.OrderService;
-import io.luan.jerry.shop.service.ShopService;
 import io.luan.jerry.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,9 +45,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private ShopService shopService;
 
     @Autowired
     private ItemService itemService;

@@ -12,7 +12,7 @@ public class ProductPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private long id;
     private String name;
-    private Integer categoryId;
+    private int categoryId;
 }

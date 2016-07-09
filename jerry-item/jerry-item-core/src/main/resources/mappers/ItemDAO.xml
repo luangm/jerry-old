@@ -19,6 +19,7 @@
         <id property="id" column="id"/>
         <result property="sellerId" column="seller_id"/>
         <result property="productId" column="product_id"/>
+        <result property="categoryId" column="category_id"/>
     </resultMap>
 
 </mapper>

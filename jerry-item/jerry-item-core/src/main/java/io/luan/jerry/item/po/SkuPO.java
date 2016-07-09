@@ -12,6 +12,10 @@ public class SkuPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
-    private Long itemId;
+    private long id;
+    private long itemId;
+    private String skuTitle;
+
+    private long inventory;
+    private long price;
 }

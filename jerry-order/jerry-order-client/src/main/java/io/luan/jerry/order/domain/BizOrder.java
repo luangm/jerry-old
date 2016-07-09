@@ -36,14 +36,14 @@ public class BizOrder implements Serializable {
     private String buyerNick;
 
     /**
-     * Seller's shop ID, use to query from shopService
+     * Seller's user ID, use to query from userService
      */
     private Long sellerId;
 
     /**
      * Redundant, Seller's shop name.
      */
-    private String sellerName;
+    private String sellerNick;
 
     /**
      * Order's line items

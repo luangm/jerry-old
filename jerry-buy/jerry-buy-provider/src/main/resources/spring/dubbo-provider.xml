@@ -13,5 +13,6 @@
     <!-- 依赖的接口 -->
     <dubbo:reference interface="io.luan.jerry.user.service.UserService" id="userService"/>
     <dubbo:reference interface="io.luan.jerry.item.service.ItemService" id="itemService"/>
+    <dubbo:reference interface="io.luan.jerry.item.service.SkuService" id="skuService"/>
     <dubbo:reference interface="io.luan.jerry.order.service.OrderStoreService" id="orderStoreService"/>
 </beans> 

@@ -26,7 +26,7 @@ public class BizOrderConverter {
         bizOrder.setBuyerId(po.getBuyerId());
         bizOrder.setBuyerNick(po.getBuyerNick());
         bizOrder.setSellerId(po.getSellerId());
-        bizOrder.setSellerName(po.getSellerName());
+        bizOrder.setSellerNick(po.getSellerNick());
         bizOrder.setStatus(convertStatus(po.getStatus()));
 
         if (po.getOrderLines() != null) {
