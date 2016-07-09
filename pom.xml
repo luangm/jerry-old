@@ -22,6 +22,7 @@
         <module>jerry-pay</module>
         <module>jerry-buy</module>
         <module>jerry-cart</module>
+        <module>jerry-promo</module>
     </modules>
 
     <properties>

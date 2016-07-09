@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>jerry-cart-client</module>
+        <module>jerry-cart-data</module>
+        <module>jerry-cart-provider</module>
     </modules>
 
     <dependencies>

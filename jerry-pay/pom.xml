@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>jerry-pay-client</module>
+        <module>jerry-pay-data</module>
+        <module>jerry-pay-provider</module>
     </modules>
 
     <dependencies>

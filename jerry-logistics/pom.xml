@@ -15,6 +15,7 @@
     <modules>
         <module>jerry-logistics-client</module>
         <module>jerry-logistics-provider</module>
+        <module>jerry-logistics-data</module>
     </modules>
 
     <dependencies>
