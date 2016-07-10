@@ -19,6 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Guangmiao Luan
  * @since 7/8/2016
@@ -55,6 +58,23 @@ public class OrderStoreServiceImpl implements OrderStoreService {
 
     @Override
     @Transactional
+    public List<Order> enableOrders(List<Order> orders) {
+        List<Order> list = new ArrayList<>();
+
+        for (Order order: orders) {
+            bizOrderDAO.enableBizOrder(order.getBizOrder().getId());
+            payOrderDAO.enablePayOrder(order.getPayOrder().getId());
+            logisticsOrderDAO.enableLogisticsOrder(order.getLogisticsOrder().getId());
+
+            Order updated = orderService.getOrder(order.getBizOrder().getId());
+            list.add(updated);
+        }
+
+        return list;
+    }
+
+    @Override
+    @Transactional
     public Order storeOrder(Order order) {
         PayOrderPO payOrderPO = payOrderConverter.convert(order.getPayOrder());
         payOrderDAO.addPayOrder(payOrderPO);
@@ -77,8 +97,4 @@ public class OrderStoreServiceImpl implements OrderStoreService {
         return result;
     }
 
-    @Override
-    public Order enableOrder(Order order) {
-        return order;
-    }
 }

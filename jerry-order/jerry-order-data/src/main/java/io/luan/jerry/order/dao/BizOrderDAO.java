@@ -11,4 +11,6 @@ public interface BizOrderDAO {
     BizOrderPO getBizOrder(Long bizOrderId);
 
     int addBizOrder(BizOrderPO bizOrderPO);
+
+    int enableBizOrder(Long bizOrderId);
 }

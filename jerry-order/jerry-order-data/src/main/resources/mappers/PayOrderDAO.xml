@@ -25,6 +25,12 @@
         )
     </insert>
 
+    <update id="enablePayOrder">
+        UPDATE pay_orders
+        SET pay_status = 1
+        WHERE id_pay_order = #{payOrderId}
+    </update>
+
     <resultMap id="payOrderResultMap" type="PayOrder">
         <id property="id" column="id_pay_order"/>
         <result property="status" column="pay_status"/>

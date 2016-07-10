@@ -7,25 +7,24 @@
     <cache/>
 
     <select id="getBizOrder" resultMap="bizOrderResultMap">
-        SELECT
-        *
-        FROM
-        biz_orders
-        LEFT JOIN
-        biz_order_lines ON id_biz_order = biz_order_lines.biz_order_id
-        WHERE
-        id_biz_order = #{bizOrderId}
+        SELECT *
+        FROM biz_orders
+        LEFT JOIN biz_order_lines ON id_biz_order = biz_order_lines.biz_order_id
+        WHERE id_biz_order = #{bizOrderId}
     </select>
 
     <insert id="addBizOrder" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO
-        biz_orders (
-            pay_order_id, logistics_order_id, buyer_id, seller_id, biz_status
-        )
-        VALUES (
-           #{payOrderId}, #{logisticsOrderId}, #{buyerId}, #{sellerId}, #{status}
-        )
+        INSERT INTO biz_orders
+        ( pay_order_id, logistics_order_id, buyer_id, seller_id, biz_status )
+        VALUES
+        ( #{payOrderId}, #{logisticsOrderId}, #{buyerId}, #{sellerId}, #{status} )
     </insert>
+
+    <update id="enableBizOrder">
+        UPDATE biz_orders
+        SET biz_status = 1
+        WHERE id_biz_order = #{bizOrderId}
+    </update>
 
     <resultMap id="bizOrderResultMap" type="BizOrder">
         <id property="id" column="id_biz_order"/>

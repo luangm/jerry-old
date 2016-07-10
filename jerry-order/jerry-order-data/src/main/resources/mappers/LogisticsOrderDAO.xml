@@ -25,6 +25,12 @@
         )
     </insert>
 
+    <update id="enableLogisticsOrder">
+        UPDATE logistics_orders
+        SET logistics_status = 1
+        WHERE id_logistics_order = #{logisticsOrderId}
+    </update>
+
     <resultMap id="logisticsOrderResultMap" type="LogisticsOrder">
         <id property="id" column="id_logistics_order"/>
         <result property="status" column="logistics_status"/>

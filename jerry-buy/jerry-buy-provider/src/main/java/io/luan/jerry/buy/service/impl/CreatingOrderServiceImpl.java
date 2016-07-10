@@ -50,20 +50,25 @@ public class CreatingOrderServiceImpl implements CreatingOrderService {
 
         List<OrderSpec> orderSpecList = buildOrderSpecs(request, buyer);
 
-        for(OrderSpec orderSpec: orderSpecList) {
+        List<Order> storedOrders = new ArrayList<>();
+
+        for (OrderSpec orderSpec : orderSpecList) {
             Order order = orderConverter.convert(orderSpec);
-
             Order storedOrder = orderStoreService.storeOrder(order);
-
-            result.getOrders().add(storedOrder);
+            storedOrders.add(storedOrder);
         }
+
+        // all orders are successfully stored
+        // now enable them
+        List<Order> enabledOrders = orderStoreService.enableOrders(storedOrders);
+        result.getOrders().addAll(enabledOrders);
 
         return result;
     }
 
     /**
      * The main process.
-     *
+     * <p>
      * 1. Verify orders
      * 2. Split orders
      * 3. build specs

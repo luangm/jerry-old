@@ -11,4 +11,6 @@ public interface PayOrderDAO {
     PayOrderPO getPayOrder(Long payOrderId);
 
     int addPayOrder(PayOrderPO payOrderPO);
+
+    int enablePayOrder(Long payOrderId);
 }

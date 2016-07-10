@@ -11,4 +11,6 @@ public interface LogisticsOrderDAO {
     LogisticsOrderPO getLogisticsOrder(Long logisticsOrderId);
 
     int addLogisticsOrder(LogisticsOrderPO logisticsOrderPO);
+
+    int enableLogisticsOrder(Long logisticsOrderId);
 }
