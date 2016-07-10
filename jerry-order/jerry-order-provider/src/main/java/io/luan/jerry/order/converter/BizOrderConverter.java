@@ -58,6 +58,22 @@ public class BizOrderConverter {
             po.setStatus(bizOrder.getStatus().getIndex());
         }
 
+        if (bizOrder.getTotalPrice() != null) {
+            po.setTotalPrice(bizOrder.getTotalPrice());
+        }
+
+        if (bizOrder.getShippingFee() != null) {
+            po.setShippingFee(bizOrder.getShippingFee());
+        }
+
+        if (bizOrder.getTotalDiscount() != null) {
+            po.setTotalDiscount(bizOrder.getTotalDiscount());
+        }
+
+        if (bizOrder.getPaidPrice() != null) {
+            po.setPaidPrice(bizOrder.getPaidPrice());
+        }
+
         if (bizOrder.getOrderLines() != null) {
             for (BizOrderLine line : bizOrder.getOrderLines()) {
                 BizOrderLinePO linePO = lineConverter.convert(line);

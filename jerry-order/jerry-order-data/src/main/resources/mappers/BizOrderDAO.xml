@@ -15,9 +15,9 @@
 
     <insert id="addBizOrder" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO biz_orders
-        ( pay_order_id, logistics_order_id, buyer_id, seller_id, biz_status )
+        ( pay_order_id, logistics_order_id, buyer_id, seller_id, biz_status, total_price )
         VALUES
-        ( #{payOrderId}, #{logisticsOrderId}, #{buyerId}, #{sellerId}, #{status} )
+        ( #{payOrderId}, #{logisticsOrderId}, #{buyerId}, #{sellerId}, #{status}, #{totalPrice} )
     </insert>
 
     <update id="enableBizOrder">
@@ -35,6 +35,7 @@
         <result property="status" column="biz_status"/>
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
+        <result property="totalPrice" column="total_price"/>
         <collection property="orderLines" resultMap="bizOrderLineResultMap"/>
     </resultMap>
 

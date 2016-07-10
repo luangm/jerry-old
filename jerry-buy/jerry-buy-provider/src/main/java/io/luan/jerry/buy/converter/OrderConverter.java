@@ -32,6 +32,7 @@ public class OrderConverter {
         bizOrder.setStatus(BizOrderStatus.Invisible);
         bizOrder.setBuyerId(orderSpec.getBuyer().getId());
         bizOrder.setSellerId(orderSpec.getSeller().getId());
+        bizOrder.setTotalPrice(orderSpec.getTotalPrice());
 
         for (OrderLineSpec line : orderSpec.getOrderLines()) {
             BizOrderLine bizOrderLine = new BizOrderLine();

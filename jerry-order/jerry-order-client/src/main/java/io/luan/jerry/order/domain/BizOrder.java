@@ -40,6 +40,26 @@ public class BizOrder implements Serializable {
     private Date updateTime;
 
     /**
+     * Sum of item prices;
+     */
+    private Long totalPrice;
+
+    /**
+     * totalPrice + shipping - discount
+     */
+    private Long paidPrice;
+
+    /**
+     * cost of shipping, redundant from logisticsOrder
+     */
+    private Long shippingFee;
+
+    /**
+     * total discounts; individual item discount may be split to orderLines
+     */
+    private Long totalDiscount;
+
+    /**
      * Order's line items
      */
     private List<BizOrderLine> orderLines = new ArrayList<>();

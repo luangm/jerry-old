@@ -30,6 +30,12 @@ public class BizOrderPO implements Serializable {
 
     private long totalPrice;
 
+    private long shippingFee;
+
+    private long totalDiscount;
+
+    private long paidPrice;
+
     private Date createTime;
 
     private Date updateTime;
