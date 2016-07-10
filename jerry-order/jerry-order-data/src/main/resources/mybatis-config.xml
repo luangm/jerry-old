@@ -9,6 +9,7 @@
     </typeAliases>
     <mappers>
         <mapper resource="mappers/BizOrderDAO.xml"/>
+        <mapper resource="mappers/BizOrderLineDAO.xml"/>
         <mapper resource="mappers/LogisticsOrderDAO.xml"/>
         <mapper resource="mappers/PayOrderDAO.xml"/>
     </mappers>

@@ -3,8 +3,6 @@ package io.luan.jerry.order.po;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Guangmiao Luan
@@ -19,4 +17,7 @@ public class LogisticsOrderPO implements Serializable {
 
     private Integer status;
 
+    private Long buyerId;
+
+    private Long sellerId;
 }

@@ -26,6 +26,7 @@
         <module>jerry-finance</module>
         <module>jerry-messenger</module>
         <module>jerry-sell</module>
+        <module>jerry-search</module>
     </modules>
 
     <properties>

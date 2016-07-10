@@ -27,4 +27,19 @@ public class BizOrderLineConverter {
 
         return bizOrderLine;
     }
+
+    public BizOrderLinePO convert(BizOrderLine line) {
+        BizOrderLinePO po = new BizOrderLinePO();
+
+        po.setId(line.getId());
+        po.setBizOrderId(line.getBizOrderId());
+        po.setItemId(line.getItemId());
+        po.setItemTitle(line.getItemTitle());
+        po.setQuantity(line.getQuantity());
+        po.setUnitPrice(line.getUnitPrice());
+        po.setSkuId(line.getSkuId());
+        po.setSkuTitle(line.getSkuTitle());
+
+        return po;
+    }
 }

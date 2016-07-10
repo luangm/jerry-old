@@ -37,6 +37,21 @@ public class BizOrderConverter {
         return bizOrder;
     }
 
+    public BizOrderPO convert(BizOrder bizOrder) {
+        BizOrderPO po = new BizOrderPO();
+        po.setId(bizOrder.getId());
+        po.setBuyerId(bizOrder.getBuyerId());
+        po.setSellerId(bizOrder.getSellerId());
+        po.setStatus(bizOrder.getStatus().getIndex());
+
+        for(BizOrderLine line: bizOrder.getOrderLines()) {
+            BizOrderLinePO linePO = lineConverter.convert(line);
+            po.getOrderLines().add(linePO);
+        }
+
+        return po;
+    }
+
     private static BizOrderStatus convertStatus(Integer status) {
         if (status != null) {
             return BizOrderStatus.getByIndex(status);

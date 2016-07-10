@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.luan.jerry.order.dao.BizOrderLineDAO">
+
+    <cache/>
+
+    <select id="getBizOrderLine" resultMap="bizOrderLineResultMap">
+        SELECT
+        *
+        FROM
+        biz_order_lines
+        WHERE
+        id_biz_order_line = #{bizOrderLineId}
+    </select>
+
+    <insert id="addBizOrderLine" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+        biz_order_lines (
+        biz_order_id, item_id, sku_id, unit_price, quantity, item_title, sku_title
+        )
+        VALUES (
+        #{bizOrderId}, #{itemId}, #{skuId}, #{unitPrice}, #{quantity}, #{itemTitle}, #{skuTitle}
+        )
+    </insert>
+
+    <resultMap id="bizOrderLineResultMap" type="BizOrderLine">
+        <id property="id" column="id_biz_order_line"/>
+        <result property="bizOrderId" column="biz_order_id"/>
+        <result property="itemId" column="item_id"/>
+        <result property="skuId" column="sku_id"/>
+        <result property="unitPrice" column="unit_price"/>
+        <result property="quantity" column="quantity"/>
+        <result property="itemTitle" column="item_title"/>
+        <result property="skuTitle" column="sku_title"/>
+    </resultMap>
+
+</mapper>

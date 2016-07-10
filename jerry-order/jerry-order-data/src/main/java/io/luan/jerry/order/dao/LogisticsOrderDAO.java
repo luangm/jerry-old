@@ -9,4 +9,6 @@ import io.luan.jerry.order.po.LogisticsOrderPO;
 public interface LogisticsOrderDAO {
 
     LogisticsOrderPO getLogisticsOrder(Long logisticsOrderId);
+
+    int addLogisticsOrder(LogisticsOrderPO logisticsOrderPO);
 }

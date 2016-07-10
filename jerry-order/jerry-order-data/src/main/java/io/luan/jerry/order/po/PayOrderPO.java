@@ -17,4 +17,7 @@ public class PayOrderPO implements Serializable {
 
     private Integer status;
 
+    private Long buyerId;
+
+    private Long sellerId;
 }

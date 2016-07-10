@@ -9,4 +9,6 @@ import io.luan.jerry.order.po.BizOrderPO;
 public interface BizOrderDAO {
 
     BizOrderPO getBizOrder(Long bizOrderId);
+
+    int addBizOrder(BizOrderPO bizOrderPO);
 }

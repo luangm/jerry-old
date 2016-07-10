@@ -65,16 +65,16 @@ public class OrderServiceImpl implements OrderService {
         Order order = new Order();
         order.setBizOrder(bizOrder);
 
-        LogisticsOrderPO logisticsOrderPO = logisticsOrderDAO.getLogisticsOrder(bizOrder.getLogisticsOrderId());
-        if (logisticsOrderPO != null) {
-            LogisticsOrder logisticsOrder = logisticsOrderConverter.convert(logisticsOrderPO);
-            order.setLogisticsOrder(logisticsOrder);
-        }
-
         PayOrderPO payOrderPO = payOrderDAO.getPayOrder(bizOrder.getPayOrderId());
         if (payOrderPO != null) {
             PayOrder payOrder = payOrderConverter.convert(payOrderPO);
             order.setPayOrder(payOrder);
+        }
+
+        LogisticsOrderPO logisticsOrderPO = logisticsOrderDAO.getLogisticsOrder(bizOrder.getLogisticsOrderId());
+        if (logisticsOrderPO != null) {
+            LogisticsOrder logisticsOrder = logisticsOrderConverter.convert(logisticsOrderPO);
+            order.setLogisticsOrder(logisticsOrder);
         }
 
         return order;

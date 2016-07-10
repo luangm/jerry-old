@@ -17,14 +17,22 @@
         id_biz_order = #{bizOrderId}
     </select>
 
+    <insert id="addBizOrder" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+        biz_orders (
+            pay_order_id, logistics_order_id, buyer_id, seller_id, biz_status
+        )
+        VALUES (
+           #{payOrderId}, #{logisticsOrderId}, #{buyerId}, #{sellerId}, #{status}
+        )
+    </insert>
+
     <resultMap id="bizOrderResultMap" type="BizOrder">
         <id property="id" column="id_biz_order"/>
         <result property="payOrderId" column="pay_order_id"/>
         <result property="logisticsOrderId" column="logistics_order_id"/>
         <result property="buyerId" column="buyer_id"/>
-        <result property="buyerNick" column="buyer_nick"/>
         <result property="sellerId" column="seller_id"/>
-        <result property="sellerName" column="seller_name"/>
         <result property="status" column="biz_status"/>
         <collection property="orderLines" resultMap="bizOrderLineResultMap"/>
     </resultMap>

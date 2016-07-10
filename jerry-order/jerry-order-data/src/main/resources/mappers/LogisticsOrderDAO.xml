@@ -15,9 +15,21 @@
         id_logistics_order = #{logisticsOrderId}
     </select>
 
+    <insert id="addLogisticsOrder" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+        logistics_orders (
+        buyer_id, seller_id, logistics_status
+        )
+        VALUES (
+        #{buyerId}, #{sellerId}, #{status}
+        )
+    </insert>
+
     <resultMap id="logisticsOrderResultMap" type="LogisticsOrder">
         <id property="id" column="id_logistics_order"/>
         <result property="status" column="logistics_status"/>
+        <result property="buyerId" column="buyer_id"/>
+        <result property="sellerId" column="seller_id"/>
     </resultMap>
 
 </mapper>

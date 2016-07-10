@@ -1,8 +1,23 @@
 package io.luan.jerry.order.service.impl;
 
+import io.luan.jerry.order.converter.BizOrderConverter;
+import io.luan.jerry.order.converter.BizOrderLineConverter;
+import io.luan.jerry.order.converter.LogisticsOrderConverter;
+import io.luan.jerry.order.converter.PayOrderConverter;
+import io.luan.jerry.order.dao.BizOrderDAO;
+import io.luan.jerry.order.dao.BizOrderLineDAO;
+import io.luan.jerry.order.dao.LogisticsOrderDAO;
+import io.luan.jerry.order.dao.PayOrderDAO;
 import io.luan.jerry.order.domain.Order;
+import io.luan.jerry.order.po.BizOrderLinePO;
+import io.luan.jerry.order.po.BizOrderPO;
+import io.luan.jerry.order.po.LogisticsOrderPO;
+import io.luan.jerry.order.po.PayOrderPO;
+import io.luan.jerry.order.service.OrderService;
 import io.luan.jerry.order.service.OrderStoreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Guangmiao Luan
@@ -11,9 +26,55 @@ import org.springframework.stereotype.Service;
 @Service("orderStoreService")
 public class OrderStoreServiceImpl implements OrderStoreService {
 
+    @Autowired
+    private BizOrderDAO bizOrderDAO;
+
+    @Autowired
+    private BizOrderLineDAO bizOrderLineDAO;
+
+    @Autowired
+    private PayOrderDAO payOrderDAO;
+
+    @Autowired
+    private LogisticsOrderDAO logisticsOrderDAO;
+
+    @Autowired
+    private BizOrderConverter bizOrderConverter;
+
+    @Autowired
+    private PayOrderConverter payOrderConverter;
+
+    @Autowired
+    private LogisticsOrderConverter logisticsOrderConverter;
+
+    @Autowired
+    private BizOrderLineConverter bizOrderLineConverter;
+
+    @Autowired
+    private OrderService orderService;
+
     @Override
+    @Transactional
     public Order storeOrder(Order order) {
-        return order;
+        PayOrderPO payOrderPO = payOrderConverter.convert(order.getPayOrder());
+        payOrderDAO.addPayOrder(payOrderPO);
+
+        LogisticsOrderPO logisticsOrderPO = logisticsOrderConverter.convert(order.getLogisticsOrder());
+        logisticsOrderDAO.addLogisticsOrder(logisticsOrderPO);
+
+        BizOrderPO bizOrderPO = bizOrderConverter.convert(order.getBizOrder());
+        bizOrderPO.setPayOrderId(payOrderPO.getId());
+        bizOrderPO.setLogisticsOrderId(logisticsOrderPO.getId());
+        bizOrderDAO.addBizOrder(bizOrderPO);
+
+        for (BizOrderLinePO linePO : bizOrderPO.getOrderLines()) {
+            linePO.setBizOrderId(bizOrderPO.getId());
+            bizOrderLineDAO.addBizOrderLine(linePO);
+        }
+
+        Order result = orderService.getOrder(bizOrderPO.getId());
+
+        return result;
     }
 
     @Override

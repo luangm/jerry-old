@@ -15,9 +15,21 @@
         id_pay_order = #{payOrderId}
     </select>
 
+    <insert id="addPayOrder" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+        pay_orders (
+        buyer_id, seller_id, pay_status
+        )
+        VALUES (
+        #{buyerId}, #{sellerId}, #{status}
+        )
+    </insert>
+
     <resultMap id="payOrderResultMap" type="PayOrder">
         <id property="id" column="id_pay_order"/>
         <result property="status" column="pay_status"/>
+        <result property="buyerId" column="buyer_id"/>
+        <result property="sellerId" column="seller_id"/>
     </resultMap>
 
 </mapper>

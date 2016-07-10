@@ -13,11 +13,24 @@ public class LogisticsOrderConverter {
 
     public LogisticsOrder convert(LogisticsOrderPO po) {
 
-        LogisticsOrder LogisticsOrder = new LogisticsOrder();
-        LogisticsOrder.setId(po.getId());
-        LogisticsOrder.setStatus(convertStatus(po.getStatus()));
+        LogisticsOrder logisticsOrder = new LogisticsOrder();
+        logisticsOrder.setId(po.getId());
+        logisticsOrder.setBuyerId(po.getBuyerId());
+        logisticsOrder.setSellerId(po.getSellerId());
+        logisticsOrder.setStatus(convertStatus(po.getStatus()));
 
-        return LogisticsOrder;
+        return logisticsOrder;
+    }
+
+    public LogisticsOrderPO convert(LogisticsOrder logisticsOrder) {
+
+        LogisticsOrderPO po = new LogisticsOrderPO();
+        po.setId(logisticsOrder.getId());
+        po.setBuyerId(logisticsOrder.getBuyerId());
+        po.setSellerId(logisticsOrder.getSellerId());
+        po.setStatus(logisticsOrder.getStatus().getIndex());
+
+        return po;
     }
 
     private static LogisticsOrderStatus convertStatus(Integer status) {

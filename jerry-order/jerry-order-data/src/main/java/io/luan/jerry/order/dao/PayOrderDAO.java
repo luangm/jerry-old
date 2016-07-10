@@ -9,4 +9,6 @@ import io.luan.jerry.order.po.PayOrderPO;
 public interface PayOrderDAO {
 
     PayOrderPO getPayOrder(Long payOrderId);
+
+    int addPayOrder(PayOrderPO payOrderPO);
 }
