@@ -10,6 +10,10 @@ import lombok.Data;
 @Data
 public class DeliveryAddressDTO extends BaseDTO {
 
+    private String name;
+    private String address;
+    private String phone;
+
     @Override
     public void validate() {
 

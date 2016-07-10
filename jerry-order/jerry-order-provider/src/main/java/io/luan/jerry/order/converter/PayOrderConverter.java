@@ -12,29 +12,36 @@ import org.springframework.stereotype.Component;
 public class PayOrderConverter {
 
     public PayOrder convert(PayOrderPO po) {
+        PayOrder payOrder = new PayOrder();
+        payOrder.setId(po.getId());
+        payOrder.setBuyerId(po.getBuyerId());
+        payOrder.setSellerId(po.getSellerId());
+        payOrder.setStatus(PayOrderStatus.getByIndex(po.getStatus()));
+        payOrder.setCreateTime(po.getCreateTime());
+        payOrder.setUpdateTime(po.getUpdateTime());
 
-        PayOrder PayOrder = new PayOrder();
-        PayOrder.setId(po.getId());
-        PayOrder.setBuyerId(po.getBuyerId());
-        PayOrder.setSellerId(po.getSellerId());
-        PayOrder.setStatus(convertStatus(po.getStatus()));
-
-        return PayOrder;
+        return payOrder;
     }
 
     public PayOrderPO convert(PayOrder payOrder) {
         PayOrderPO po = new PayOrderPO();
-        po.setId( payOrder.getId());
-        po.setBuyerId(payOrder.getBuyerId());
-        po.setSellerId(payOrder.getSellerId());
-        po.setStatus(payOrder.getStatus().getIndex());
-        return po;
-    }
 
-    private static PayOrderStatus convertStatus(Integer status) {
-        if (status != null) {
-            return PayOrderStatus.getByIndex(status);
+        if (payOrder.getId() != null) {
+            po.setId(payOrder.getId());
         }
-        return null;
+
+        if (payOrder.getBuyerId() != null) {
+            po.setBuyerId(payOrder.getBuyerId());
+        }
+
+        if (payOrder.getSellerId() != null) {
+            po.setSellerId(payOrder.getSellerId());
+        }
+
+        if (payOrder.getStatus() != null) {
+            po.setStatus(payOrder.getStatus().getIndex());
+        }
+
+        return po;
     }
 }

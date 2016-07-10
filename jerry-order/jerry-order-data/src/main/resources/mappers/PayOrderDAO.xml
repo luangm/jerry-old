@@ -36,6 +36,8 @@
         <result property="status" column="pay_status"/>
         <result property="buyerId" column="buyer_id"/>
         <result property="sellerId" column="seller_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
     </resultMap>
 
 </mapper>

@@ -33,6 +33,8 @@
         <result property="buyerId" column="buyer_id"/>
         <result property="sellerId" column="seller_id"/>
         <result property="status" column="biz_status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
         <collection property="orderLines" resultMap="bizOrderLineResultMap"/>
     </resultMap>
 

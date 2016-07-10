@@ -17,7 +17,9 @@ public class LogisticsOrderConverter {
         logisticsOrder.setId(po.getId());
         logisticsOrder.setBuyerId(po.getBuyerId());
         logisticsOrder.setSellerId(po.getSellerId());
-        logisticsOrder.setStatus(convertStatus(po.getStatus()));
+        logisticsOrder.setStatus(LogisticsOrderStatus.getByIndex(po.getStatus()));
+        logisticsOrder.setCreateTime(po.getCreateTime());
+        logisticsOrder.setUpdateTime(po.getUpdateTime());
 
         return logisticsOrder;
     }
@@ -25,18 +27,24 @@ public class LogisticsOrderConverter {
     public LogisticsOrderPO convert(LogisticsOrder logisticsOrder) {
 
         LogisticsOrderPO po = new LogisticsOrderPO();
-        po.setId(logisticsOrder.getId());
-        po.setBuyerId(logisticsOrder.getBuyerId());
-        po.setSellerId(logisticsOrder.getSellerId());
-        po.setStatus(logisticsOrder.getStatus().getIndex());
+
+        if (logisticsOrder.getId() != null) {
+            po.setId(logisticsOrder.getId());
+        }
+
+        if (logisticsOrder.getBuyerId() != null) {
+            po.setBuyerId(logisticsOrder.getBuyerId());
+        }
+
+        if (logisticsOrder.getSellerId() != null) {
+            po.setSellerId(logisticsOrder.getSellerId());
+        }
+
+        if (logisticsOrder.getStatus() != null) {
+            po.setStatus(logisticsOrder.getStatus().getIndex());
+        }
 
         return po;
     }
 
-    private static LogisticsOrderStatus convertStatus(Integer status) {
-        if (status != null) {
-            return LogisticsOrderStatus.getByIndex(status);
-        }
-        return null;
-    }
 }

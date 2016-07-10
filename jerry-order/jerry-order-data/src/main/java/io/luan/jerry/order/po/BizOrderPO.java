@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,17 +16,23 @@ public class BizOrderPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private long id;
 
-    private Long payOrderId;
+    private long payOrderId;
 
-    private Long logisticsOrderId;
+    private long logisticsOrderId;
 
-    private Integer status;
+    private int status;
 
-    private Long buyerId;
+    private long buyerId;
 
-    private Long sellerId;
+    private long sellerId;
+
+    private long totalPrice;
+
+    private Date createTime;
+
+    private Date updateTime;
 
     private List<BizOrderLinePO> orderLines = new ArrayList<>();
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,6 +35,9 @@ public class BizOrder implements Serializable {
      * Seller's user ID, use to query from userService
      */
     private Long sellerId;
+
+    private Date createTime;
+    private Date updateTime;
 
     /**
      * Order's line items

@@ -1,8 +1,10 @@
 package io.luan.jerry.order.domain;
 
+import io.luan.jerry.pay.domain.PayProvider;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * SDO for Order's Pay Information
@@ -25,4 +27,20 @@ public class PayOrder implements Serializable {
      * Seller's user ID, use to query from userService
      */
     private Long sellerId;
+
+    private Integer payProviderId;
+
+    /**
+     * The 3rd party payment provider
+     */
+    private PayProvider payProvider;
+
+    /**
+     * The buyer's payment account used to make this payment
+     */
+    private String payAccount;
+
+
+    private Date createTime;
+    private Date updateTime;
 }

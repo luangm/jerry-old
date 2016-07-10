@@ -31,14 +31,37 @@ public class BizOrderLineConverter {
     public BizOrderLinePO convert(BizOrderLine line) {
         BizOrderLinePO po = new BizOrderLinePO();
 
-        po.setId(line.getId());
-        po.setBizOrderId(line.getBizOrderId());
-        po.setItemId(line.getItemId());
-        po.setItemTitle(line.getItemTitle());
-        po.setQuantity(line.getQuantity());
-        po.setUnitPrice(line.getUnitPrice());
-        po.setSkuId(line.getSkuId());
-        po.setSkuTitle(line.getSkuTitle());
+        if (line.getId() != null) {
+            po.setId(line.getId());
+        }
+
+        if (line.getBizOrderId() != null) {
+            po.setBizOrderId(line.getBizOrderId());
+        }
+
+        if (line.getItemId() != null) {
+            po.setItemId(line.getItemId());
+        }
+
+        if (line.getItemTitle() != null) {
+            po.setItemTitle(line.getItemTitle());
+        }
+
+        if (line.getQuantity() != null) {
+            po.setQuantity(line.getQuantity());
+        }
+
+        if (line.getUnitPrice() != null) {
+            po.setUnitPrice(line.getUnitPrice());
+        }
+
+        if (line.getSkuId() != null) {
+            po.setSkuId(line.getSkuId());
+        }
+
+        if (line.getSkuTitle() != null) {
+            po.setSkuTitle(line.getSkuTitle());
+        }
 
         return po;
     }

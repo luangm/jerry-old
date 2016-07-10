@@ -3,6 +3,7 @@ package io.luan.jerry.order.po;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author Guangmiao Luan
@@ -13,11 +14,17 @@ public class PayOrderPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private long id;
 
-    private Integer status;
+    private int status;
 
-    private Long buyerId;
+    private long buyerId;
 
-    private Long sellerId;
+    private long sellerId;
+
+    private long paidAmount;
+
+    private Date createTime;
+
+    private Date updateTime;
 }
