@@ -1,14 +1,11 @@
 package io.luan.jerry.test.category;
 
-import io.luan.jerry.category.domain.Category;
-import io.luan.jerry.category.service.CategoryService;
+import io.luan.jerry.category.domain.model.Category;
+import io.luan.jerry.category.domain.service.CategoryService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Created by Miao on 6/21/2016.
- */
 public class CategoryTest {
     private static ClassPathXmlApplicationContext context;
     // private static ProductService productService;

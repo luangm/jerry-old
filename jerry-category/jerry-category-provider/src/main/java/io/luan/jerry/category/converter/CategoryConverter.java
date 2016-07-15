@@ -1,6 +1,6 @@
 package io.luan.jerry.category.converter;
 
-import io.luan.jerry.category.domain.Category;
+import io.luan.jerry.category.domain.model.Category;
 import io.luan.jerry.category.po.CategoryPO;
 import org.springframework.stereotype.Component;
 

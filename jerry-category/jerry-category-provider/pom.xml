@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>io.luan</groupId>
-            <artifactId>jerry-category-client</artifactId>
+            <artifactId>jerry-category-domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

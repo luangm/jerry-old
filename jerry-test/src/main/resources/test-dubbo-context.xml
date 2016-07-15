@@ -17,7 +17,7 @@
 
     <!-- Category -->
     <dubbo:reference id="categoryService"
-                     interface="io.luan.jerry.category.service.CategoryService" check="false"/>
+                     interface="io.luan.jerry.category.domain.service.CategoryService" check="false"/>
 
     <dubbo:reference id="userService"
                      interface="io.luan.jerry.user.service.UserService" check="false"/>

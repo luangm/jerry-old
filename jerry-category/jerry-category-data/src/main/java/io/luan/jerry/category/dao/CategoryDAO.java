@@ -6,7 +6,8 @@ import io.luan.jerry.category.po.CategoryPO;
 import java.util.List;
 
 /**
- * Created by Miao on 6/22/2016.
+ * @author Guangmiao Luan
+ * @since 7/15/2016
  */
 public interface CategoryDAO {
 
