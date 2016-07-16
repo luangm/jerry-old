@@ -13,11 +13,12 @@ public class CategoryConverter {
     public Category convert(CategoryPO po) {
         Category category = new Category();
 
-        category.setId(po.getCategory_id());
+        category.setId(po.getId_category());
         category.setName(po.getName());
         category.setParentId(po.getParent_id());
         category.setSortOrder(po.getSort_order());
         category.setChildCount(po.getChild_count());
+        category.setDeleted(po.isDeleted());
 
         return category;
     }
@@ -26,7 +27,7 @@ public class CategoryConverter {
         CategoryPO po = new CategoryPO();
 
         if (category.getId() != null) {
-            po.setCategory_id(category.getId());
+            po.setId_category(category.getId());
         }
 
         if (category.getName() != null) {
@@ -39,6 +40,10 @@ public class CategoryConverter {
 
         if (category.getSortOrder() != null) {
             po.setSort_order(category.getSortOrder());
+        }
+
+        if (category.getDeleted() != null) {
+            po.setDeleted(category.getDeleted());
         }
 
         return po;

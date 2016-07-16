@@ -51,6 +51,8 @@ public class CategoryTest {
     @Test
     public void test_allCategories() {
         List<Category> categories = categoryRepository.getCategoryList();
-        System.out.println(categories);
+        for (Category cat : categories) {
+            System.out.println(cat);
+        }
     }
 }

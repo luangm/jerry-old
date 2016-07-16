@@ -20,6 +20,7 @@ public class Category implements Serializable {
     private String name;
     private Integer sortOrder;
     private Integer childCount;
+    private Boolean deleted;
 
     public boolean isLeaf() {
         return childCount == 0;

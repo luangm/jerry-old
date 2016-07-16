@@ -9,27 +9,28 @@
     <select id="getCategory" resultType="io.luan.jerry.category.data.po.CategoryPO">
         SELECT
             P.*,
-            COUNT(C.id) AS child_count
+            COUNT(C.id_category) AS child_count
         FROM jerry_category.categories P
-            LEFT JOIN jerry_category.categories C ON C.parent_id = P.id
-        WHERE P.id = #{categoryId}
-        GROUP BY P.id
+            LEFT JOIN jerry_category.categories C ON C.parent_id = P.id_category
+        WHERE P.id_category = #{categoryId}
+        GROUP BY P.id_category
     </select>
 
     <select id="getCategoryList" resultType="io.luan.jerry.category.data.po.CategoryPO">
         SELECT
             P.*,
-            COUNT(C.id) AS child_count
+            COUNT(C.id_category) AS child_count
         FROM jerry_category.categories P
-            LEFT JOIN jerry_category.categories C ON C.parent_id = P.id
-        GROUP BY P.id
+            LEFT JOIN jerry_category.categories C ON C.parent_id = P.id_category
+        WHERE P.deleted = 0
+        GROUP BY P.id_category
     </select>
 
     <insert id="addCategory">
         INSERT INTO jerry_category.categories (
-            id, name, parent_id, sort_order
+            id_category, name, parent_id, sort_order
         ) VALUES (
-            #{category_id}, #{name}, #{parent_id}, #{sort_order}
+            #{id_category}, #{name}, #{parent_id}, #{sort_order}
         )
     </insert>
 

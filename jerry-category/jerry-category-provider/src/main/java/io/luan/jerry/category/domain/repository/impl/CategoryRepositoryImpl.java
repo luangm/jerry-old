@@ -34,7 +34,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         CategoryPO po = categoryConverter.convert(category);
         int result = categoryDAO.addCategory(po);
         if (result > 0) {
-            CategoryPO newPO = categoryDAO.getCategory(po.getCategory_id());
+            CategoryPO newPO = categoryDAO.getCategory(po.getId_category());
             return categoryConverter.convert(newPO);
         }
 
