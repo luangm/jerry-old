@@ -11,7 +11,6 @@
 
     <aop:aspectj-autoproxy/>
     <context:component-scan base-package="io.luan.jerry"/>
-    <!-- scan for mappers and let them be autowired -->
     <mybatis:scan base-package="io.luan.jerry.category.data.dao"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
@@ -26,7 +25,7 @@
         <property name="dataSource" ref="myDataSource"/>
     </bean>
 
-    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+    <!--<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>-->
 
     <!--<bean id="myTxManager"-->
     <!--class="org.springframework.orm.hibernate5.HibernateTransactionManager">-->

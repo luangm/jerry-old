@@ -38,6 +38,17 @@ public class CategoryTest {
     }
 
     @Test
+    public void test_addCategory() {
+        Category cat = new Category();
+        cat.setId(999);
+        cat.setName("ABC");
+
+        Category cat2 = categoryRepository.addCategory(cat);
+
+        System.out.println(cat2);
+    }
+
+    @Test
     public void test_allCategories() {
         List<Category> categories = categoryRepository.getCategoryList();
         System.out.println(categories);

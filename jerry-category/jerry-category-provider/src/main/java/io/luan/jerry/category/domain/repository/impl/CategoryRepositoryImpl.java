@@ -5,6 +5,7 @@ import io.luan.jerry.category.data.po.CategoryPO;
 import io.luan.jerry.category.domain.model.Category;
 import io.luan.jerry.category.domain.repository.CategoryRepository;
 import io.luan.jerry.category.infrastructure.converter.CategoryConverter;
+import io.luan.jerry.common.domain.exception.JerryException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,20 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     private CategoryConverter categoryConverter;
 
     @Override
+    public Category addCategory(Category category) {
+        log.info("addCategory");
+
+        CategoryPO po = categoryConverter.convert(category);
+        int result = categoryDAO.addCategory(po);
+        if (result > 0) {
+            CategoryPO newPO = categoryDAO.getCategory(po.getCategory_id());
+            return categoryConverter.convert(newPO);
+        }
+
+        throw new JerryException();
+    }
+
+    @Override
     public Category getCategory(Integer categoryId) {
         log.info("getCategory");
 
@@ -39,14 +54,12 @@ public class CategoryRepositoryImpl implements CategoryRepository {
             return null;
         }
 
-        Category category = categoryConverter.convert(po);
-
-        return category;
+        return categoryConverter.convert(po);
     }
 
     @Override
     public List<Category> getCategoryList() {
-        //log.info("getCategoryList");
+        log.info("getCategoryList");
 
         List<Category> categories = new ArrayList<>();
 

@@ -6,7 +6,7 @@
 
     <cache/>
 
-    <select id="getCategory" resultMap="categoryResultMap">
+    <select id="getCategory" resultType="io.luan.jerry.category.data.po.CategoryPO">
         SELECT
             P.*,
             COUNT(C.id) AS child_count
@@ -16,7 +16,7 @@
         GROUP BY P.id
     </select>
 
-    <select id="getCategoryList" resultMap="categoryResultMap">
+    <select id="getCategoryList" resultType="io.luan.jerry.category.data.po.CategoryPO">
         SELECT
             P.*,
             COUNT(C.id) AS child_count
@@ -25,11 +25,12 @@
         GROUP BY P.id
     </select>
 
-    <resultMap id="categoryResultMap" type="io.luan.jerry.category.data.po.CategoryPO">
-        <id property="categoryId" column="category_id"/>
-        <result property="parentId" column="parent_id"/>
-        <result property="sortOrder" column="sort_order"/>
-        <result property="childCount" column="child_count"/>
-    </resultMap>
+    <insert id="addCategory">
+        INSERT INTO jerry_category.categories (
+            id, name, parent_id, sort_order
+        ) VALUES (
+            #{category_id}, #{name}, #{parent_id}, #{sort_order}
+        )
+    </insert>
 
 </mapper>

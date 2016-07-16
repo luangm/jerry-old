@@ -9,10 +9,10 @@ public class CategoryPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
-    private String name;
-    private Integer parentId;
-    private Integer sortOrder;
-    private Integer childCount;
+    private int category_id;
+    private String name = "";
+    private int parent_id;
+    private int sort_order;
+    private int child_count;
 
 }
