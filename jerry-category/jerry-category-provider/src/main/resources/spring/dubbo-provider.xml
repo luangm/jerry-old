@@ -9,6 +9,9 @@
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="io.luan.jerry.category.domain.service.CategoryService"
                    ref="categoryService"/>
+    <dubbo:service interface="io.luan.jerry.category.domain.repository.CategoryRepository"
+                   ref="categoryRepository"/>
+
     <!--<dubbo:service interface="io.qianmo.category.service.AttributeService"-->
     <!--ref="attributeService" />-->
     <!--<dubbo:service interface="io.qianmo.category.service.ShopCategoryService"-->

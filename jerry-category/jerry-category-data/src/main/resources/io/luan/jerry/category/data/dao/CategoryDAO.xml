@@ -2,35 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="io.luan.jerry.category.dao.CategoryDAO">
+<mapper namespace="io.luan.jerry.category.data.dao.CategoryDAO">
 
     <cache/>
 
     <select id="getCategory" resultMap="categoryResultMap">
         SELECT
-        p.*, count(c.id) as child_count
-        FROM
-        jerry_category.categories p
-        LEFT JOIN
-        categories c ON c.parent_id = p.id
-        WHERE
-        p.id = #{categoryId}
-        GROUP BY
-        p.id
+            P.*,
+            COUNT(C.id) AS child_count
+        FROM jerry_category.categories P
+            LEFT JOIN jerry_category.categories C ON C.parent_id = P.id
+        WHERE P.id = #{categoryId}
+        GROUP BY P.id
     </select>
 
     <select id="getCategoryList" resultMap="categoryResultMap">
         SELECT
-        p.*, count(c.id) as child_count
-        FROM
-        jerry_category.categories p
-        LEFT JOIN
-        categories c ON c.parent_id = p.id
-        GROUP BY
-        p.id
+            P.*,
+            COUNT(C.id) AS child_count
+        FROM jerry_category.categories P
+            LEFT JOIN jerry_category.categories C ON C.parent_id = P.id
+        GROUP BY P.id
     </select>
 
-    <resultMap id="categoryResultMap" type="Category">
+    <resultMap id="categoryResultMap" type="io.luan.jerry.category.data.po.CategoryPO">
         <id property="categoryId" column="category_id"/>
         <result property="parentId" column="parent_id"/>
         <result property="sortOrder" column="sort_order"/>

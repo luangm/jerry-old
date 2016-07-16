@@ -1,7 +1,7 @@
-package io.luan.jerry.category.dao;
+package io.luan.jerry.category.data.dao;
 
 
-import io.luan.jerry.category.po.CategoryPO;
+import io.luan.jerry.category.data.po.CategoryPO;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface CategoryDAO {
 
-    CategoryPO getCategory(Integer categoryId);
+    CategoryPO getCategory(int categoryId);
 
     List<CategoryPO> getCategoryList();
 }

@@ -18,6 +18,8 @@
     <!-- Category -->
     <dubbo:reference id="categoryService"
                      interface="io.luan.jerry.category.domain.service.CategoryService" check="false"/>
+    <dubbo:reference id="categoryRepository"
+                     interface="io.luan.jerry.category.domain.repository.CategoryRepository" check="false"/>
 
     <dubbo:reference id="userService"
                      interface="io.luan.jerry.user.service.UserService" check="false"/>

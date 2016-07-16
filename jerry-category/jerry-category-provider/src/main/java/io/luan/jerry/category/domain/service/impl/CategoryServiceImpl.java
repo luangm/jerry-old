@@ -1,30 +1,32 @@
-package io.luan.jerry.category.service.impl;
+package io.luan.jerry.category.domain.service.impl;
 
-import io.luan.jerry.category.converter.CategoryConverter;
-import io.luan.jerry.category.dao.CategoryDAO;
+import io.luan.jerry.category.data.dao.CategoryDAO;
+import io.luan.jerry.category.data.po.CategoryPO;
 import io.luan.jerry.category.domain.model.Category;
 import io.luan.jerry.category.domain.service.CategoryService;
-import io.luan.jerry.category.po.CategoryPO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.luan.jerry.category.infrastructure.converter.CategoryConverter;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * Implementation of CategoryService
  */
 @Service("categoryService")
+@Log
 public class CategoryServiceImpl implements CategoryService {
-    private static final Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
-    @Autowired
+
+
+    @Resource
     private CategoryDAO categoryDao;
 
-    @Autowired
+    @Resource
     private CategoryConverter categoryConverter;
 
     @Override
     public Category getCategory(Integer categoryId) {
-        logger.info("ABC");
+        log.info("ABC");
         if (categoryId == null) {
             return null;
         }

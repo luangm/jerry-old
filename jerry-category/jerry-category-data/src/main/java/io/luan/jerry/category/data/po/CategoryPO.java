@@ -1,4 +1,4 @@
-package io.luan.jerry.category.po;
+package io.luan.jerry.category.data.po;
 
 import lombok.Data;
 
