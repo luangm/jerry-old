@@ -1,7 +1,7 @@
 package io.luan.jerry.item.service.impl;
 
-import io.luan.jerry.category.domain.Category;
-import io.luan.jerry.category.service.CategoryService;
+import io.luan.jerry.category.domain.model.Category;
+import io.luan.jerry.category.domain.repository.CategoryRepository;
 import io.luan.jerry.item.converter.ProductConverter;
 import io.luan.jerry.item.dao.ProductDAO;
 import io.luan.jerry.item.domain.Product;
@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductConverter productConverter;
 
     @Autowired
-    private CategoryService categoryService;
+    private CategoryRepository categoryRepository;
 
     @Override
     public Product getProduct(Long productId) {
@@ -40,7 +40,7 @@ public class ProductServiceImpl implements ProductService {
         Product product = productConverter.convert(productPO);
 
         if (product.getCategoryId() != null) {
-            Category category = categoryService.getCategory(product.getCategoryId());
+            Category category = categoryRepository.getCategory(product.getCategoryId());
             product.setCategory(category);
         }
 

@@ -18,7 +18,9 @@
     <dubbo:reference id="userService"
                      interface="io.luan.jerry.user.service.UserService"/>
     <dubbo:reference id="categoryService"
-                     interface="io.luan.jerry.category.service.CategoryService"/>
+                     interface="io.luan.jerry.category.domain.service.CategoryService"/>
+    <dubbo:reference id="categoryRepository"
+                     interface="io.luan.jerry.category.domain.repository.CategoryRepository"/>
 
 
 </beans> 

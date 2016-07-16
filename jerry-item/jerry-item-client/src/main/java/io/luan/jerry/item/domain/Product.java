@@ -1,6 +1,6 @@
 package io.luan.jerry.item.domain;
 
-import io.luan.jerry.category.domain.Category;
+import io.luan.jerry.category.domain.model.Category;
 import lombok.Data;
 
 import java.io.Serializable;

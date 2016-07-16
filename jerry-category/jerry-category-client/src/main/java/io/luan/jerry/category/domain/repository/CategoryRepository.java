@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface CategoryRepository {
 
-    Category getCategory(int categoryId);
+    Category getCategory(Integer categoryId);
 
     List<Category> getCategoryList();
 }

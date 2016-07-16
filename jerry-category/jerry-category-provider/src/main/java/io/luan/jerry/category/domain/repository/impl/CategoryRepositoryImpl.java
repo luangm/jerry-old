@@ -27,8 +27,12 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     private CategoryConverter categoryConverter;
 
     @Override
-    public Category getCategory(int categoryId) {
+    public Category getCategory(Integer categoryId) {
         log.info("getCategory");
+
+        if (categoryId == null) {
+            return null;
+        }
 
         CategoryPO po = categoryDAO.getCategory(categoryId);
         if (po == null) {
