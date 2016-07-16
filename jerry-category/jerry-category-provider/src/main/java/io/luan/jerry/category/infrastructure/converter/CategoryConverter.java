@@ -18,7 +18,7 @@ public class CategoryConverter {
         category.setParentId(po.getParent_id());
         category.setSortOrder(po.getSort_order());
         category.setChildCount(po.getChild_count());
-        category.setDeleted(po.isDeleted());
+        category.setDeleted(po.getDeleted());
 
         return category;
     }

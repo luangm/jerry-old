@@ -28,10 +28,30 @@
 
     <insert id="addCategory">
         INSERT INTO jerry_category.categories (
-            id_category, name, parent_id, sort_order
+        <trim suffixOverrides=",">
+            id_category,
+            name,
+            <if test="parent_id != null">parent_id,</if>
+            <if test="parent_id != null">sort_order,</if>
+        </trim>
         ) VALUES (
-            #{id_category}, #{name}, #{parent_id}, #{sort_order}
+        <trim suffixOverrides=",">
+            #{id_category},
+            #{name},
+            <if test="parent_id != null">#{parent_id},</if>
+            <if test="parent_id != null">#{sort_order},</if>
+        </trim>
         )
     </insert>
+
+    <update id="updateCategory">
+        UPDATE jerry_category.categories
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="sort_order != null">sort_order = #{sort_order},</if>
+            id_category = #{id_category}
+        </set>
+        WHERE id_category = #{id_category}
+    </update>
 
 </mapper>

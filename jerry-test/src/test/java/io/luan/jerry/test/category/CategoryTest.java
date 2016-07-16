@@ -40,8 +40,8 @@ public class CategoryTest {
     @Test
     public void test_addCategory() {
         Category cat = new Category();
-        cat.setId(999);
-        cat.setName("ABC");
+        cat.setId(998);
+        cat.setName("ABCd");
 
         Category cat2 = categoryRepository.addCategory(cat);
 
@@ -54,5 +54,17 @@ public class CategoryTest {
         for (Category cat : categories) {
             System.out.println(cat);
         }
+    }
+
+    @Test
+    public void test_updateCategory() {
+        //Category cat = categoryRepository.getCategory(13);
+        Category cat2 = new Category();
+        cat2.setId(13);
+        cat2.setName("fff");
+        cat2.setSortOrder(1);
+
+        Category cat3 = categoryRepository.updateCategory(cat2);
+        System.out.println(cat3);
     }
 }

@@ -8,6 +8,7 @@ import io.luan.jerry.category.infrastructure.converter.CategoryConverter;
 import io.luan.jerry.common.domain.exception.JerryException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -70,5 +71,21 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         }
 
         return categories;
+    }
+
+    @Override
+    @Transactional
+    public Category updateCategory(Category category) throws JerryException {
+        log.info("updateCategory");
+
+        CategoryPO po = categoryConverter.convert(category);
+        int result = categoryDAO.updateCategory(po);
+        if (result > 0) {
+            CategoryPO newPO = categoryDAO.getCategory(po.getId_category());
+            //throw new JerryException();
+            return categoryConverter.convert(newPO);
+        }
+
+        throw new JerryException();
     }
 }

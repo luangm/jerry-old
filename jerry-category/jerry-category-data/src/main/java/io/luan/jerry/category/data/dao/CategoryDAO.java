@@ -11,10 +11,12 @@ import java.util.List;
  */
 public interface CategoryDAO {
 
-    int addCategory(CategoryPO po);
+    int addCategory(CategoryPO category);
 
     CategoryPO getCategory(int categoryId);
 
     List<CategoryPO> getCategoryList();
+
+    int updateCategory(CategoryPO category);
 }
 
