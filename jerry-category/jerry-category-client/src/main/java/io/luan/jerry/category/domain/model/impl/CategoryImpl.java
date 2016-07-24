@@ -6,7 +6,7 @@ import io.luan.jerry.common.domain.BaseDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -27,8 +27,8 @@ public class CategoryImpl extends BaseDO implements Category {
     private Integer sortOrder;
     private int childCount;
     private boolean deleted;
-    private LocalDateTime createTime;
-    private LocalDateTime updateTime;
+    private Date createTime;
+    private Date updateTime;
 
     private Map<Integer, Property> propertyMap;
 

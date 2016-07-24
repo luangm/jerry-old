@@ -1,6 +1,6 @@
 package io.luan.jerry.category.domain.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -25,9 +25,9 @@ public interface Category {
 
     boolean isDeleted();
 
-    LocalDateTime getCreateTime();
+    Date getCreateTime();
 
-    LocalDateTime getUpdateTime();
+    Date getUpdateTime();
 
     default boolean isLeaf() {
         return getChildCount() == 0;

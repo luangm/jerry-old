@@ -3,7 +3,7 @@ package io.luan.jerry.category.data.po;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class CategoryPO implements Serializable {
@@ -16,7 +16,7 @@ public class CategoryPO implements Serializable {
     private Integer sort_order;
     private Integer child_count;
     private Boolean deleted;
-    private LocalDateTime create_time;
-    private LocalDateTime update_time;
+    private Date create_time;
+    private Date update_time;
 
 }
