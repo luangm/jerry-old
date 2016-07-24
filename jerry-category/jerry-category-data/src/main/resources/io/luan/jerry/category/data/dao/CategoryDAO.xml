@@ -32,14 +32,14 @@
             id_category,
             name,
             <if test="parent_id != null">parent_id,</if>
-            <if test="parent_id != null">sort_order,</if>
+            <if test="sort_order != null">sort_order,</if>
         </trim>
         ) VALUES (
         <trim suffixOverrides=",">
             #{id_category},
             #{name},
             <if test="parent_id != null">#{parent_id},</if>
-            <if test="parent_id != null">#{sort_order},</if>
+            <if test="sort_order != null">#{sort_order},</if>
         </trim>
         )
     </insert>

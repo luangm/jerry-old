@@ -13,9 +13,9 @@ public interface CategoryRepository {
 
     Category addCategory(Category category) throws JerryException;
 
-    Category getCategory(Integer categoryId) throws JerryException;
+    Category getCategory(int categoryId) throws JerryException;
 
     List<Category> getCategoryList() throws JerryException;
 
-    Category updateCategory(Category category) throws JerryException;
+    Category updateCategory(int categoryId, Category category) throws JerryException;
 }

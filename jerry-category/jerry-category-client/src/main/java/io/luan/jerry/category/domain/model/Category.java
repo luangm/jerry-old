@@ -1,8 +1,7 @@
 package io.luan.jerry.category.domain.model;
 
-import lombok.Data;
-
-import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Map;
 
 /**
  * Service data object for Category (Backend Category)
@@ -10,24 +9,32 @@ import java.io.Serializable;
  * @author Guangmiao Luan
  * @since 7/15/2016
  */
-@Data
-public class Category implements Serializable {
+public interface Category {
 
-    private static final long serialVersionUID = 1L;
+    int getChildCount();
 
-    private Integer id;
-    private Integer parentId;
-    private String name;
-    private Integer sortOrder;
-    private Integer childCount;
-    private Boolean deleted;
+    int getId();
 
-    public boolean isLeaf() {
-        return childCount == 0;
+    String getName();
+
+    Integer getParentId();
+
+    Map<Integer, Property> getPropertyMap();
+
+    Integer getSortOrder();
+
+    boolean isDeleted();
+
+    LocalDateTime getCreateTime();
+
+    LocalDateTime getUpdateTime();
+
+    default boolean isLeaf() {
+        return getChildCount() == 0;
     }
 
-    public boolean isRoot() {
-        return parentId == null;
+    default boolean isRoot() {
+        return getParentId() == 0;
     }
 }
 

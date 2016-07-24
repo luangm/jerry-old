@@ -43,12 +43,8 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     }
 
     @Override
-    public Category getCategory(Integer categoryId) {
+    public Category getCategory(int categoryId) {
         log.info("getCategory");
-
-        if (categoryId == null) {
-            return null;
-        }
 
         CategoryPO po = categoryDAO.getCategory(categoryId);
         if (po == null) {
@@ -75,10 +71,11 @@ public class CategoryRepositoryImpl implements CategoryRepository {
 
     @Override
     @Transactional
-    public Category updateCategory(Category category) throws JerryException {
+    public Category updateCategory(int categoryId, Category category) throws JerryException {
         log.info("updateCategory");
 
         CategoryPO po = categoryConverter.convert(category);
+        po.setId_category(categoryId);
         int result = categoryDAO.updateCategory(po);
         if (result > 0) {
             CategoryPO newPO = categoryDAO.getCategory(po.getId_category());

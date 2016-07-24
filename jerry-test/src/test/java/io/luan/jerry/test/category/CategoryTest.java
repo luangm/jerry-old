@@ -1,6 +1,7 @@
 package io.luan.jerry.test.category;
 
 import io.luan.jerry.category.domain.model.Category;
+import io.luan.jerry.category.domain.model.impl.CategoryImpl;
 import io.luan.jerry.category.domain.repository.CategoryRepository;
 import io.luan.jerry.category.domain.service.CategoryService;
 import org.junit.BeforeClass;
@@ -39,13 +40,19 @@ public class CategoryTest {
 
     @Test
     public void test_addCategory() {
-        Category cat = new Category();
-        cat.setId(998);
-        cat.setName("ABCd");
+        Category cat1 = categoryRepository.getCategory(97);
+        System.out.println(cat1);
+
+        CategoryImpl cat = new CategoryImpl();
+        cat.setId(972);
+        cat.setName("ABCdd");
+        cat.setParentId(97);
 
         Category cat2 = categoryRepository.addCategory(cat);
-
         System.out.println(cat2);
+
+        Category cat3 = categoryRepository.getCategory(97);
+        System.out.println(cat3);
     }
 
     @Test
@@ -59,12 +66,12 @@ public class CategoryTest {
     @Test
     public void test_updateCategory() {
         //Category cat = categoryRepository.getCategory(13);
-        Category cat2 = new Category();
-        cat2.setId(13);
-        cat2.setName("fff");
-        cat2.setSortOrder(1);
+        CategoryImpl cat2 = new CategoryImpl();
 
-        Category cat3 = categoryRepository.updateCategory(cat2);
+        cat2.setName("bbb");
+        //cat2.setSortOrder(12);
+
+        Category cat3 = categoryRepository.updateCategory(13, cat2);
         System.out.println(cat3);
     }
 }

@@ -6,5 +6,5 @@ package io.luan.jerry.category.domain.model;
  * @author Guangmiao Luan
  * @since 7/15/2016
  */
-public class NavCategory {
+public interface NavCategory {
 }
